@@ -9,7 +9,8 @@ body {
     background-color: #e0f7fa;
     color: #00695c;
     text-align: center; /* Centra il testo */
-    margin-bottom: 100px; /* Aggiunge 100px di spazio in fondo alla pagina */
+    margin-bottom: 200px; /* Aggiunge 100px di spazio in fondo alla pagina */
+    margin-top: 200px;
 }
 
 h1 {

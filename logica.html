@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGICA</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>LOGICA</h1>
+
+    <!-- Domanda a scelta multipla -->
+    <form id="quizlogi">
+        <fieldset id="question1">
+            <legend>In un armadio ci sono 7 maglioni (2 blu, 3 rossi e 2 gialli) e 3 magliette (2 blu e 1 rossa). 
+            Prendendo prima un maglione e poi una maglietta, qual è la probabilità che siano entrambi blu?</legend>
+            <label>
+                <input type="radio" name="probabilita1" value="4/10">
+                A. 4/10
+            </label><br>
+            <label>
+                <input type="radio" name="probabilita1" value="2/21">
+                B. 2/21
+            </label><br>
+            <label>
+                <input type="radio" name="probabilita1" value="20/21">
+                C. 20/21
+            </label><br>
+            <label>
+                <input type="radio" name="probabilita1" value="4/21">
+                D. 4/21
+            </label>
+        </fieldset>
+        
+        <fieldset id="question2">
+            <legend>Una vasca è lunga 10m e larga 5m. Se in un metro cubo si possono collocare 21,6 casse, quanto dovrà essere alta la vasca per contenere 4320 casse?</legend>
+            <label>
+                <input type="radio" name="altezza_vasca" value="2,40 m">
+                A. 2,40 m
+            </label><br>
+            <label>
+                <input type="radio" name="altezza_vasca" value="3,60 m">
+                B. 3,60 m
+            </label><br>
+            <label>
+                <input type="radio" name="altezza_vasca" value="4,00 m">
+                C. 4,00 m
+            </label><br>
+            <label>
+                <input type="radio" name="altezza_vasca" value="4,50 m">
+                D. 4,50 m
+            </label>
+        </fieldset>
+        
+        <fieldset id="question3">
+            <legend>In teoria degli insiemi, sono definite le "operazioni" di unione ∪, di intersezione ∩ e di esclusione (il corrispettivo della sottrazione). Inoltre, è definito l'insieme vuoto ∅ che contiene 0 elementi. La parte colorata nel seguente diagramma corrisponde a:</legend>
+            <label>
+                <input type="radio" name="insiemi" value="(A ∩ B)/(A ∩ B ∩ C) ∪ [(A ∩ (C/B)) / (A ∩ C ∩ D)]">
+                A. (A ∩ B)/(A ∩ B ∩ C) ∪ [(A ∩ (C/B)) / (A ∩ C ∩ D)]
+            </label><br>
+            <label>
+                <input type="radio" name="insiemi" value="(B ∪ C ∪ D) ∩ [(A/C) ∪ (D / (C ∩ A ∩ D))]">
+                B. (B ∪ C ∪ D) ∩ [(A/C) ∪ (D / (C ∩ A ∩ D))]
+            </label><br>
+            <label>
+                <input type="radio" name="insiemi" value="[(A ∩ B ∩ C) ∪ D] ∩ A ∪ (C / (B ∪ D)) ∪ (B/A)">
+                C. [(A ∩ B ∩ C) ∪ D] ∩ A ∪ (C / (B ∪ D)) ∪ (B/A)
+            </label><br>
+            <label>
+                <input type="radio" name="insiemi" value="(A ∩ B)/(A ∩ B ∩ C) ∩ ∅ ∩ [(A ∩ (C/B)) / (A ∩ C ∩ D)]">
+                D. (A ∩ B)/(A ∩ B ∩ C) ∩ ∅ ∩ [(A ∩ (C/B)) / (A ∩ C ∩ D)]
+            </label>
+        </fieldset>
+        
+        <fieldset id="question4">
+            <legend>Quali sono i valori x e y che completano la seguente serie numerica? 1, 1, 4, 8, x, 27, 16, 64, 25, y</legend>
+            <label>
+                <input type="radio" name="serie_numerica" value="x = 3, y = 100">
+                A. x = 3, y = 100
+            </label><br>
+            <label>
+                <input type="radio" name="serie_numerica" value="x = 9, y = 125">
+                B. x = 9, y = 125
+            </label><br>
+            <label>
+                <input type="radio" name="serie_numerica" value="x = 3, y = 125">
+                C. x = 3, y = 125
+            </label><br>
+            <label>
+                <input type="radio" name="serie_numerica" value="x = 9, y = 100">
+                D. x = 9, y = 100
+            </label>
+        </fieldset>
+        
+        <fieldset id="question5">
+            <legend>"Tutti i corridori sono tenaci; nessuna persona tenace è superba” significa che:</legend>
+            <label>
+                <input type="radio" name="corridori" value="Alcuni superbi sono tenaci">
+                A. Alcuni superbi sono tenaci
+            </label><br>
+            <label>
+                <input type="radio" name="corridori" value="Nessun corridore è tenace">
+                B. Nessun corridore è tenace
+            </label><br>
+            <label>
+                <input type="radio" name="corridori" value="Nessun corridore è superbo">
+                C. Nessun corridore è superbo
+            </label><br>
+            <label>
+                <input type="radio" name="corridori" value="Alcuni superbi sono corridori">
+                D. Alcuni superbi sono corridori
+            </label>
+        </fieldset>
+        
+        <fieldset id="question6">
+            <legend>Sull'isola di Smullyan vivono solo cavalieri, che dicono sempre e solo la verità, e furfanti, che mentono sempre. Sull'isola si tiene una riunione, e tutti i partecipanti si siedono intorno a un grande tavolo rotondo e dichiarano: "La persona alla mia sinistra è un furfante". Sapendo che i cavalieri sono meno di 200, quanti possono essere in tutto i partecipanti alla riunione?</legend>
+            <label>
+                <input type="radio" name="cavalieri" value="370">
+                A. 370
+            </label><br>
+            <label>
+                <input type="radio" name="cavalieri" value="460">
+                B. 460
+            </label><br>
+            <label>
+                <input type="radio" name="cavalieri" value="393">
+                C. 393
+            </label><br>
+            <label>
+                <input type="radio" name="cavalieri" value="407">
+                D. 407
+            </label>
+        </fieldset>
+        
+        <fieldset id="question7">
+            <legend>Il servizio di pullman tra Palera e Revigliasco ha una corsa diretta che parte ogni 12 minuti da ciascuna delle due città. Il servizio ha inizio contemporaneamente in entrambe le città. Il tragitto richiede 1 ora e 5 minuti in ciascuna direzione e gli autobus sostano per almeno 5 minuti presso la stazione di arrivo. Qual è il numero minimo di autobus necessari per fornire il servizio, considerando sia l'andata sia il ritorno?</legend>
+            <label>
+                <input type="radio" name="pullman" value="4">
+                A. 4
+            </label><br>
+            <label>
+                <input type="radio" name="pullman" value="6">
+                B. 6
+            </label><br>
+            <label>
+                <input type="radio" name="pullman" value="12">
+                C. 12
+            </label><br>
+            <label>
+                <input type="radio" name="pullman" value="14">
+                D. 14
+            </label>
+        </fieldset>
+        
+        <fieldset id="question8">
+            <legend>Per numerare le pagine di un libro sono state usate in totale 3299 cifre. Quante sono le pagine del libro?</legend>
+            <label>
+                <input type="radio" name="pagine" value="Tra 1000 e 1500">
+                A. Tra 1000 e 1500
+            </label><br>
+            <label>
+                <input type="radio" name="pagine" value="Più di 3000">
+                B. Più di 3000
+            </label><br>
+            <label>
+                <input type="radio" name="pagine" value="Tra 1500 e 2000">
+                C. Tra 1500 e 2000
+            </label><br>
+            <label>
+                <input type="radio" name="pagine" value="Tra 2000 e 3000">
+                D. Tra 2000 e 3000
+            </label>
+        </fieldset>
+        
+        <fieldset id="question9">
+            <legend>Silvia abita tra la chiesa e il distributore. La chiesa si trova tra il distributore e il panificio. Si può affermare che:</legend>
+            <label>
+                <input type="radio" name="silvia" value="Silvia abita più vicino alla chiesa che al panificio">
+                A. Silvia abita più vicino alla chiesa che al panificio
+            </label><br>
+            <label>
+                <input type="radio" name="silvia" value="È certo che il distributore e il panificio sono equidistanti dalla chiesa">
+                B. È certo che il distributore e il panificio sono equidistanti dalla chiesa
+            </label><br>
+            <label>
+                <input type="radio" name="silvia" value="Silvia abita più vicino al distributore che alla chiesa">
+                C. Silvia abita più vicino al distributore che alla chiesa
+            </label><br>
+            <label>
+                <input type="radio" name="silvia" value="Silvia abita più vicino al panificio che alla chiesa">
+                D. Silvia abita più vicino al panificio che alla chiesa
+            </label>
+        </fieldset>
+        
+        <fieldset id="question10">
+            <legend>Degli archeologi ritrovano un frammento di un piatto circolare come in figura, e vi chiedono di capire quanto fosse lungo il raggio del piatto intero. Sapendo che P è il punto medio del segmento AB e Q è il punto medio dell'arco AB, e che il segmento AB misura 50 cm e PQ misura 5 cm, quanto misurava il raggio del piatto?</legend>
+            <label>
+                <input type="radio" name="raggio" value="60 cm">
+                A. 60 cm
+            </label><br>
+            <label>
+                <input type="radio" name="raggio" value="52 cm">
+                B. 52 cm
+            </label><br>
+            <label>
+                <input type="radio" name="raggio" value="72 cm">
+                C. 72 cm
+            </label><br>
+            <label>
+                <input type="radio" name="raggio" value="65 cm">
+                D. 65 cm
+            </label>
+        </fieldset>            
+    </form>
+    <p id="feedback"></p>
+    <button id="nextQuiz" style="display: none;">Vai al Prossimo Quiz</button>
+    <img id="completionImage" src="OIP.jpg" alt="Quiz completato!" style="display:none;">
+    <script src="script.js"></script>
+</body>
+</html>

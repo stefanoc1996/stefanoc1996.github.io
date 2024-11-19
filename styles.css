@@ -13,14 +13,14 @@ body {
 
 h1 {
     margin-bottom: 20px; /* Spazio sotto l'elemento h1 */ 
-    color: #0400fd;
+    color: #1a58af;
 }
 
 p {
     font-size: 1.2em;
     line-height: 1.5;
     margin-bottom: 10px; /* Spazio sotto ogni paragrafo */
-    color: #0400fd
+    color: #1a58af
 }
 
 #topImage {
@@ -30,7 +30,7 @@ p {
     margin-bottom: 20px; /* Spazio sotto l'immagine */
 }
 
-#button_mate {
+#button_logi {
     margin-top: 20px;
     padding: 10px 20px;
     font-size: 1em;
@@ -41,7 +41,51 @@ p {
     cursor: pointer;
 }
 
-#button_geo {
+#button_att {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #00796b;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#button_musi {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #00796b;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#button_sport{
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #00796b;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#button_info {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #00796b;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#button_cultgen {
     margin-top: 20px;
     padding: 10px 20px;
     font-size: 1em;

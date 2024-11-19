@@ -2,6 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('Page loaded');
     const button = document.getElementById('myButton');
     button.addEventListener('click', () => {
-        alert('Hai cliccato il pulsante!');
+        window.location.href = 'seconda_pagina.html';
     });
 });

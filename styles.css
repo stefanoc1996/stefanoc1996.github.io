@@ -30,7 +30,7 @@ p {
     margin-bottom: 20px; /* Spazio sotto l'immagine */
 }
 
-button {
+#button_mate {
     margin-top: 20px;
     padding: 10px 20px;
     font-size: 1em;
@@ -39,4 +39,49 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+#button_geo {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #00796b;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px; /* Spazio sopra il form */
+}
+
+fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+legend {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#nextQuiz {
+    margin-top: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #00ff22;
 }

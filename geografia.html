@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRACTICE EXAMS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>GEOGRAFIA</h1>
+    <p>in lavorazione</p>
+
+    <!-- Domanda a scelta multipla -->
+    <form id="quizForm">
+        <fieldset id="question1">
+            <legend>Qual è la capitale dell'Italia?</legend>
+            <label>
+                <input type="radio" name="capitale" value="Roma">
+                Roma
+            </label><br>
+            <label>
+                <input type="radio" name="capitale" value="Milano">
+                Milano
+            </label><br>
+            <label>
+                <input type="radio" name="capitale" value="Napoli">
+                Napoli
+            </label><br>
+            <label>
+                <input type="radio" name="capitale" value="Torino">
+                Torino
+            </label>
+        </fieldset>
+        <fieldset id="question2" style="display: none;">
+            <legend>Qual è la lingua ufficiale del Brasile?</legend>
+            <label>
+                <input type="radio" name="lingua" value="Portoghese">
+                Portoghese
+            </label><br>
+            <label>
+                <input type="radio" name="lingua" value="Spagnolo">
+                Spagnolo
+            </label><br>
+            <label>
+                <input type="radio" name="lingua" value="Inglese">
+                Inglese
+            </label><br>
+            <label>
+                <input type="radio" name="lingua" value="Francese">
+                Francese
+            </label>
+        </fieldset>
+        <!-- Aggiungi altre domande qui, con ID question3, question4, ecc. -->
+        <fieldset id="question10" style="display: none;">
+            <legend>Qual è la capitale della Francia?</legend>
+            <label>
+                <input type="radio" name="capitale_francia" value="Parigi">
+                Parigi
+            </label><br>
+            <label>
+                <input type="radio" name="capitale_francia" value="Marsiglia">
+                Marsiglia
+            </label><br>
+            <label>
+                <input type="radio" name="capitale_francia" value="Lione">
+                Lione
+            </label><br>
+            <label>
+                <input type="radio" name="capitale_francia" value="Nizza">
+                Nizza
+            </label>
+        </fieldset>
+    </form>
+    <p id="feedback"></p>
+    <button id="nextQuiz" style="display: none;">Vai al Prossimo Quiz</button>
+    <img id="completionImage" src="OIP.jpg" alt="Quiz completato!" style="display:none;">
+
+    
+    
+    <script src="script.js"></script>
+
+</body>
+</html>

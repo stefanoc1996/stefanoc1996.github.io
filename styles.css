@@ -16,3 +16,10 @@ h1 {
 p {
     color: #0400ff
 }
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 20px;
+}

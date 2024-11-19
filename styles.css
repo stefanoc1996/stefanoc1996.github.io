@@ -11,15 +11,18 @@ body {
 
 h1 {
     color: #0400ff;
+    margin-bottom: 20px; /* Spazio sotto l'elemento h1 */
 }
 
 p {
     color: #0400ff
+    line-height: 1.5;
+    margin-bottom: 10px; /* Spazio sotto ogni paragrafo */
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-top: 20px;
+#topImage {
+    width: 100%; /* Adatta l'immagine alla larghezza della pagina */
+    max-width: 600px; /* Limita la larghezza massima dell'immagine */
+    height: auto; /* Mantiene le proporzioni dell'immagine */
+    margin-bottom: 20px; /* Spazio sotto l'immagine */
 }

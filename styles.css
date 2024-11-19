@@ -10,14 +10,15 @@ body {
 }
 
 h1 {
+    margin-bottom: 20px; /* Spazio sotto l'elemento h1 */ 
     color: #0400ff;
-    margin-bottom: 20px; /* Spazio sotto l'elemento h1 */
 }
 
 p {
-    color: #0400ff
+    font-size: 1.2em;
     line-height: 1.5;
     margin-bottom: 10px; /* Spazio sotto ogni paragrafo */
+    color: #0400ff
 }
 
 #topImage {

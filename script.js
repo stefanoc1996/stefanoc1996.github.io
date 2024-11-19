@@ -43,7 +43,13 @@ document.addEventListener('DOMContentLoaded', () => {
             window.location.href = 'culturaGenerale.html';
         });
     }
-
+    // Funzione per tornare alla home
+    const homeButton = document.getElementById("homeButton");
+    if (homeButton) {
+        homeButton.addEventListener('click', () => {
+            window.location.href = 'index.html';
+        });
+    }
     // Gestione del quiz logica
     const form = document.getElementById('quizlogi');
     const feedback = document.getElementById('feedback');

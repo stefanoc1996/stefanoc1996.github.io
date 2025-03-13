@@ -1,49 +1,224 @@
 {
-  "programma-pt": [
-      {
-          "data": "24 Aprile",
-          "attivita": "accoglienza, registrazione delle squadre, sorteggio scaletta 'prova talento' e batterie prova 'staffetta della cultura'",
-          "ora": "16:00"
-        },
-        {
-          "data": "24 Aprile",
-          "attivita": "cerimonia d'apertura e prime audizioni delle battle",
-          "ora": "16:00"
-        },
-        {
-          "data": "ciao",
-          "attivita": "proiezione dei cortometraggi presso il Teatro Claudio",
-          "ora": "16:00"
-        },
-        {
-          "data": "24 Aprile",
-          "attivita": "termine giornata",
-          "ora": "22:00"
-        },
-        {
-          "data": "25 Aprile",
-          "attivita": "svolgimento delle prove",
-          "ora": "09:00 - 20:00"
-        },
-        {
-          "data": "25 Aprile",
-          "attivita": "proiezione dei cortometraggi presso il Teatro Claudio",
-          "ora": "20:45 - 23:00"
-        },
-        {
-          "data": "26 Aprile",
-          "attivita": "svolgimento delle prove",
-          "ora": "09:00 - 20:00"
-        },
-        {
-          "data": "26 Aprile",
-          "attivita": "proiezione dei cortometraggi presso il Teatro Claudio",
-          "ora": "20:45 - 23:00"
-        },
-        {
-          "data": "27 Aprile",
-          "attivita": "svolgimento delle prove, cerimonia di chiusura e premiazione",
-          "ora": "09:00 - 20:00"
-        }
+  "programma": [
+    {
+      "data": "26 Aprile",
+      "squadra": "6 MARSHMALLOW",
+      "ora": "09:00 - 09:10"
+    },
+    {
+      "data": "26 Aprile",
+      "squadra": "6 MARSHMALLOW",
+      "ora": "09:10 - 09:20"
+    },
+    {
+      "data": "26 Aprile",
+      "squadra": "6 MARSHMALLOW",
+      "ora": "09:20 - 09:30"
+    },
+    {
+      "data": "26 Aprile",
+      "squadra": "6 MARSHMALLOW",
+      "ora": "09:30 - 09:40"
+    },
+    {
+      "data": "26 Aprile",
+      "squadra": "6 MARSHMALLOW",
+      "ora": "09:40 - 09:50"
+    },
+    {
+      "data": "26 Aprile",
+      "squadra": "6 MARSHMALLOW",
+      "ora": "09:50 - 10:00"
+    },
+    {
+      "data": "26 Aprile",
+      "squadra": "6 MARSHMALLOW",
+      "ora": "10:00 - 10:10"
+    },
+    {
+      "data": "26 Aprile",
+      "squadra": "6 MARSHMALLOW",
+      "ora": "10:10 - 10:20"
+    },
+    {
+      "data": "26 Aprile",
+      "squadra": "6 MARSHMALLOW",
+      "ora": "10:20 - 10:30"
+    },
+    {
+      "data": "26 Aprile",
+      "squadra": "6 MARSHMALLOW",
+      "ora": "10:30 - 10:40"
+    },
+    {
+      "data": "26 Aprile",
+      "squadra": "6 MARSHMALLOW",
+      "ora": "10:40 - 10:50"
+    },
+    {
+      "data": "26 Aprile",
+      "squadra": "6 MARSHMALLOW",
+      "ora": "10:50 - 11:00"
+    },
+    {
+      "data": "26 Aprile",
+      "squadra": "6 MARSHMALLOW",
+      "ora": "11:00 - 11:10"
+    },
+    {
+      "data": "26 Aprile",
+      "squadra": "6 MARSHMALLOW",
+      "ora": "11:10 - 11:20"
+    },
+    {
+      "data": "26 Aprile",
+      "squadra": "6 MARSHMALLOW",
+      "ora": "11:20 - 11:30"
+    },
+    {
+      "data": "26 Aprile",
+      "squadra": "6 MARSHMALLOW",
+      "ora": "11:30 - 11:40"
+    },
+    {
+      "data": "26 Aprile",
+      "squadra": "6 MARSHMALLOW",
+      "ora": "11:40 - 11:50"
+    },
+    {
+      "data": "26 Aprile",
+      "squadra": "6 MARSHMALLOW",
+      "ora": "11:50 - 12:00"
+    },
+    {
+      "data": "26 Aprile",
+      "squadra": "6 MARSHMALLOW",
+      "ora": "12:00 - 12:10"
+    },
+    {
+      "data": "26 Aprile",
+      "squadra": "6 MARSHMALLOW",
+      "ora": "12:10 - 12:20"
+    },
+    {
+      "data": "26 Aprile",
+      "squadra": "6 MARSHMALLOW",
+      "ora": "12:20 - 12:30"
+    },
+    {
+      "data": "26 Aprile",
+      "squadra": "6 MARSHMALLOW",
+      "ora": "12:30 - 12:40"
+    },
+    {
+      "data": "27 Aprile",
+      "squadra": "6 MARSHMALLOW",
+      "ora": "09:00 - 09:10"
+    },
+    {
+      "data": "27 Aprile",
+      "squadra": "6 MARSHMALLOW",
+      "ora": "09:10 - 09:20"
+    },
+    {
+      "data": "27 Aprile",
+      "squadra": "6 MARSHMALLOW",
+      "ora": "09:20 - 09:30"
+    },
+    {
+      "data": "27 Aprile",
+      "squadra": "6 MARSHMALLOW",
+      "ora": "09:30 - 09:40"
+    },
+    {
+      "data": "27 Aprile",
+      "squadra": "6 MARSHMALLOW",
+      "ora": "09:40 - 09:50"
+    },
+    {
+      "data": "27 Aprile",
+      "squadra": "6 MARSHMALLOW",
+      "ora": "09:50 - 10:00"
+    },
+    {
+      "data": "27 Aprile",
+      "squadra": "6 MARSHMALLOW",
+      "ora": "10:00 - 10:10"
+    },
+    {
+      "data": "27 Aprile",
+      "squadra": "6 MARSHMALLOW",
+      "ora": "10:10 - 10:20"
+    },
+    {
+      "data": "27 Aprile",
+      "squadra": "6 MARSHMALLOW",
+      "ora": "10:20 - 10:30"
+    },
+    {
+      "data": "27 Aprile",
+      "squadra": "6 MARSHMALLOW",
+      "ora": "10:30 - 10:40"
+    },
+    {
+      "data": "27 Aprile",
+      "squadra": "6 MARSHMALLOW",
+      "ora": "10:40 - 10:50"
+    },
+    {
+      "data": "27 Aprile",
+      "squadra": "6 MARSHMALLOW",
+      "ora": "10:50 - 11:00"
+    },
+    {
+      "data": "27 Aprile",
+      "squadra": "6 MARSHMALLOW",
+      "ora": "11:00 - 11:10"
+    },
+    {
+      "data": "27 Aprile",
+      "squadra": "6 MARSHMALLOW",
+      "ora": "11:10 - 11:20"
+    },
+    {
+      "data": "27 Aprile",
+      "squadra": "6 MARSHMALLOW",
+      "ora": "11:20 - 11:30"
+    },
+    {
+      "data": "27 Aprile",
+      "squadra": "6 MARSHMALLOW",
+      "ora": "11:30 - 11:40"
+    },
+    {
+      "data": "27 Aprile",
+      "squadra": "6 MARSHMALLOW",
+      "ora": "11:40 - 11:50"
+    },
+    {
+      "data": "27 Aprile",
+      "squadra": "6 MARSHMALLOW",
+      "ora": "11:50 - 12:00"
+    },
+    {
+      "data": "27 Aprile",
+      "squadra": "6 MARSHMALLOW",
+      "ora": "12:00 - 12:10"
+    },
+    {
+      "data": "27 Aprile",
+      "squadra": "6 MARSHMALLOW",
+      "ora": "12:10 - 12:20"
+    },
+    {
+      "data": "27 Aprile",
+      "squadra": "6 MARSHMALLOW",
+      "ora": "12:20 - 12:30"
+    },
+    {
+      "data": "27 Aprile",
+      "squadra": "6 MARSHMALLOW",
+      "ora": "12:30 - 12:40"
+    }
   ]
 }

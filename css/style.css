@@ -61,6 +61,21 @@ h2 {
 }
 
 /* Programma */
+#programma-pt, #programma-pd {
+  max-width: 95%;
+  margin: 0 auto;
+  border-radius: 15px;
+  border: 2px solid #fff !important;
+  box-shadow: 0 0 20px rgba(0,0,0,0.6);
+  padding: 2rem;
+  background: rgba(255,255,255,0.92);
+  min-height: 60vh; /* Altezza minima per una buona visualizzazione */
+  max-height: 80vh; /* Altezza massima per non sforare lo schermo */
+  overflow: hidden; /* Evita che la tabella esca dal contenitore */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 .programma-table {
   background: rgba(255,255,255,0.95);
   border-radius: 15px;
@@ -76,30 +91,27 @@ h2 {
   background: rgba(0, 0, 0, 0.1);
   transition: background 0.3s;
 }
-
-#programma-pt {
-  height: 60vh;
-  width: 80%;
-  margin: 0 auto;
-  border-radius: 15px;
-  border: 2px solid #fff !important;
-  box-shadow: 0 0 20px rgba(0,0,0,0.6);
+.table-responsive {
+  max-height: 100%; /* Fa in modo che la tabella occupi tutto lo spazio disponibile */
+  overflow-y: auto; /* Scrolling verticale solo se necessario */
+  overflow-x: hidden; /* Evita scrolling orizzontale */
 }
-.programma-pt-pttable {
-  background: rgba(255,255,255,0.95);
+
+/* Miglioramenti per la tabella */
+.table {
   border-radius: 15px;
   overflow: hidden;
-  padding: 1rem;
 }
 
-.pttable thead {
+.table thead {
   background: #343a40;
   color: #fff;
 }
-.pttable tbody tr:hover {
+.table tbody tr:hover {
   background: rgba(0, 0, 0, 0.1);
   transition: background 0.3s;
 }
+
 
 
 /* Pulsanti */
@@ -140,10 +152,10 @@ section {
 }
 
 /* Ottimizzazione per dispositivi mobili (max-width: 400px) */
-@media (max-width: 400px) {
+@media (max-width: 500px) {
   body {
     background: url('images/mobile.jpg') no-repeat center center fixed;
-    background-size: contain;
+    background-size: cover;
     background-position: center;
   }
   .hero {
@@ -171,5 +183,13 @@ section {
   
   .btn {
     width: 100%;
+  }
+  #programma-pt, #programma-pd {
+    min-height: 50vh;
+    max-height: 70vh;
+    padding: 1.5rem;
+  }
+  .table-responsive {
+    max-height: 90%;
   }
 }

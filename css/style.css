@@ -1,0 +1,144 @@
+/* Import dei font da Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;700&display=swap');
+
+/* Base styles */
+body {
+  background: url('images/oct.jpg') no-repeat center center fixed;
+  background-size: cover;
+  background-position: center;
+  font-family: 'Roboto', sans-serif;
+  color: #ececec;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar */
+.navbar {
+  backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.85) !important;
+  font-size: 1.1rem;
+}
+
+/* Hero Section */
+.hero {
+  background-color: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  padding: 10rem 1rem;
+  margin-top: 56px; /* Compensa navbar fissa */
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+}
+.hero h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.hero p.lead {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-top: 1rem;
+}
+
+/* Titoli generici */
+h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+/* Mappa */
+#map {
+  height: 60vh;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 15px;
+  border: 2px solid #fff !important;
+  box-shadow: 0 0 20px rgba(0,0,0,0.6);
+}
+
+/* Programma */
+.programma-table {
+  background: rgba(255,255,255,0.95);
+  border-radius: 15px;
+  overflow: hidden;
+  padding: 1rem;
+}
+.table thead {
+  background: #343a40;
+  color: #fff;
+}
+.table tbody tr:hover {
+  background: rgba(0, 0, 0, 0.1);
+  transition: background 0.3s;
+}
+
+/* Pulsanti */
+.btn-primary {
+  background: linear-gradient(45deg, #0062E6, #33AEFF);
+  border: none;
+  font-weight: 600;
+  padding: 0.8rem 1.5rem;
+  transition: transform 0.3s, background 0.3s;
+}
+.btn-primary:hover {
+  background: linear-gradient(45deg, #0052c6, #1a9edc);
+  transform: scale(1.05);
+}
+.bg-white {
+  background-color: #fff;
+  --bs-bg-opacity: 0.3;
+}
+.bg-azzurro {
+  background-color: rgba(0, 191, 255, 0.3) !important;
+}
+/* Sezioni comuni */
+section {
+  padding: 5rem 0;
+  scroll-margin-top: 80px;
+}
+
+/* Ottimizzazione per schermi Full HD (1920px) */
+@media (min-width: 1920px) {
+  .hero h1 {
+    font-size: 4rem;
+  }
+  
+  #map {
+    height: 75vh;
+    box-shadow: 0 0 25px rgba(0,0,0,0.5);
+  }
+}
+
+/* Ottimizzazione per dispositivi mobili (max-width: 400px) */
+@media (max-width: 400px) {
+  .hero {
+    padding: 5rem 1rem;
+    margin-top: 60px;
+  }
+  
+  .hero h1 {
+    font-size: 2rem;
+    line-height: 1.3;
+  }
+  
+  #map {
+    height: 50vh;
+  }
+  
+  .navbar-brand {
+    font-size: 0.9rem;
+  }
+  
+  .table th, .table td {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .btn {
+    width: 100%;
+  }
+}

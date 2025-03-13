@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Campionati della cultura e del talento</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">OCT XVI</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#mappa">Mappa</a></li>
+          <li class="nav-item"><a class="nav-link" href="#programma">Programma</a></li>
+          <li class="nav-item"><a class="nav-link" href="#fotografica">prova fotografica</a></li>
+          <li class="nav-item"><a class="nav-link" href="#caccia">Caccia al tesoro</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero text-center">
+    <div class="container">
+      <h1>Benvenuto alla XVI edizione delle finali nazionali dei<br>Campionati della Cultura e del Talento</h1>
+      <p class="lead mt-4">Scopri i punti di interesse e il programma dell'evento</p>
+    </div>
+  </header>
+
+  <main>
+    <!-- Mappa -->
+    <section id="mappa" class="bg-azzurro">
+        <div class="container-fluid px-4"> <!-- Container fluid con padding -->
+          <div class="row">
+            <div class="col-12">
+              <h2 class="text-center mb-5">Scopri Tolfa</h2>
+              <div id="map"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <!-- Programma -->
+    <section id="programma" class="bg-azzurro">
+      <div class="container">
+        <h2 class="text-center mb-5">Programma Evento (24-28 Aprile)</h2>
+        <div class="programma-table shadow-lg">
+          <div class="table-responsive">
+            <table class="table table-hover align-middle">
+              <thead class="table-dark">
+                <tr>
+                  <th scope="col">Data</th>
+                  <th scope="col">Attività</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>24 Aprile</td>
+                  <td>Apertura e Benvenuto</td>
+                </tr>
+                <tr>
+                  <td>25 Aprile</td>
+                  <td>Workshop e Visita guidata</td>
+                </tr>
+                <tr>
+                  <td>26 Aprile</td>
+                  <td>Attività Culturali</td>
+                </tr>
+                <tr>
+                  <td>27 Aprile</td>
+                  <td>Laboratori Creativi</td>
+                </tr>
+                <tr>
+                  <td>28 Aprile</td>
+                  <td>Chiusura e Conclusioni</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Prova Fotografica -->
+    <section id="fotografica" class="bg-azzurro">
+      <div class="container">
+        <h2 class="text-center mb-5">Prova Fotografica</h2>
+        <div class="text-center">
+          <p class="lead">Condividi i tuoi scatti dell'evento</p>
+          <a href="LINK_DEL_TUO_DRIVE" class="btn btn-primary btn-lg" target="_blank">
+            <span class="d-none d-md-inline">Carica la tua foto</span>
+            <span class="d-md-none">Carica foto</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Caccia al Tesoro -->
+    <section id="caccia" class="bg-azzurro">
+      <div class="container text-center">
+        <h2 class="mb-5">Caccia al Tesoro</h2>
+        <div class="d-grid gap-3 col-lg-6 mx-auto">
+          <p class="lead">Scopri i segreti di Tolfa!</p>
+          <a href="treasure-hunt.html" class="btn btn-primary btn-lg py-3">
+            Inizia la Caccia!
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-light py-4 mt-auto">
+    <div class="container text-center">
+      <p class="mb-0">&copy; 2025 Campionati della Cultura e del Talento</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

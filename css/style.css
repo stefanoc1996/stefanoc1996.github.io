@@ -126,7 +126,7 @@ section {
   }
   
   #map {
-    height: 50vh;
+    aspect-ratio: 9 / 18;
   }
   
   .navbar-brand {

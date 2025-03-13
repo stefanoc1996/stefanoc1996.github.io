@@ -6,7 +6,7 @@
 }
 
 body {
-    background-image: url('https://www.comune.tolfa.rm.it/wp-content/uploads/2023/07/tolfa-3-jpg.webp');
+    background-image: url(images/mobile.jpg);
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -18,6 +18,12 @@ body {
     color: #fff;
     position: relative;
 }
+
+.navbar {
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.85) !important;
+    font-size: 1.1rem;
+  }
 
 .overlay {
     position: absolute;
@@ -40,7 +46,7 @@ h1 {
     margin-bottom: 20px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     font-family: 'Pirata One', cursive;
-    color: #ffd700;
+    color: #f4b907;
 }
 
 p {
@@ -52,7 +58,7 @@ p {
 .customButton {
     padding: 15px 40px;
     font-size: 1.8em;
-    background: linear-gradient(45deg, #ffd700, #c5a300);
+    background: linear-gradient(45deg, #e2fa2e, #f4b907);
     border: none;
     border-radius: 30px;
     color: #2c2c2c;

@@ -1,0 +1,50 @@
+{
+    "programma": [
+        {
+            "data": "24 Aprile",
+            "attivita": "accoglienza, registrazione delle squadre, sorteggio scaletta 'prova talento' e batterie prova 'staffetta della cultura'",
+            "ora": "16:00"
+          },
+          {
+            "data": "24 Aprile",
+            "attivita": "cerimonia d'apertura e prime audizioni delle battle",
+            "ora": "16:00"
+          },
+          {
+            "data": "24 Aprile",
+            "attivita": "proiezione dei cortometraggi presso il Teatro Claudio",
+            "ora": "16:00"
+          },
+          {
+            "data": "24 Aprile",
+            "attivita": "termine giornata",
+            "ora": "22:00"
+          },
+          {
+            "data": "25 Aprile",
+            "attivita": "svolgimento delle prove",
+            "ora": "09:00 - 20:00"
+          },
+          {
+            "data": "25 Aprile",
+            "attivita": "proiezione dei cortometraggi presso il Teatro Claudio",
+            "ora": "20:45 - 23:00"
+          },
+          {
+            "data": "26 Aprile",
+            "attivita": "svolgimento delle prove",
+            "ora": "09:00 - 20:00"
+          },
+          {
+            "data": "26 Aprile",
+            "attivita": "proiezione dei cortometraggi presso il Teatro Claudio",
+            "ora": "20:45 - 23:00"
+          },
+          {
+            "data": "27 Aprile",
+            "attivita": "svolgimento delle prove, cerimonia di chiusura e premiazione",
+            "ora": "09:00 - 20:00"
+          }
+    ]
+  }
+  

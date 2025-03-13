@@ -47,4 +47,73 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     L.control.scale({ imperial: false }).addTo(map)
     // Adatta la mappa al resize
     window.addEventListener('resize', () => map.invalidateSize());
+    fetch('programma.json')
+    .then(response => response.json())
+    .then(data => {
+      // Costruisci l'HTML della tabella
+      let tableHTML = `<div class="programma-table shadow-lg">
+        <div class="table-responsive">
+          <table class="table table-hover align-middle">
+            <thead class="table-dark">
+              <tr>
+                <th scope="col">Data</th>
+                <th scope="col">Attività</th>
+                <th scope="col">ora</th>
+              </tr>
+            </thead>
+            <tbody>`;
+      data.programma.forEach(item => {
+        tableHTML += `<tr>
+          <td>${item.data}</td>
+          <td>${item.attivita}</td>
+          <td>${item.ora}</td>
+        </tr>`;
+      });
+      tableHTML += `</tbody>
+          </table>
+        </div>
+      </div>`;
+      // Inserisci la tabella nel contenitore
+      document.getElementById('programma-content').innerHTML = tableHTML;
+    })
+    .catch(err => console.error('Errore nel caricamento del programma JSON:', err));
+
+    fetch('programma-pt.json')
+    .then(response => response.json())
+    .then(data => {
+      const container = document.getElementById('programma-pt-content');
+      const programma = data['programma-pt'];
+      
+      // Crea la tabella
+      const pttable = document.createElement('pttable');
+      pttable.className = 'table table-striped'; // Stile Bootstrap
+      
+      // Intestazione della tabella
+      const thead = `
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Ora</th>
+            <th>Attività</th>
+          </tr>
+        </thead>
+      `;
+      
+      // Corpo della tabella
+      const tbody = document.createElement('tbody');
+      programma.forEach(item => {
+        tbody.innerHTML += `
+          <tr>
+            <td>${item.data}</td>
+            <td>${item.ora}</td>
+            <td>${item.attivita}</td>
+          </tr>
+        `;
+      });
+
+      pttable.innerHTML = thead;
+      pttable.appendChild(tbody);
+      container.appendChild(pttable);
+    })
+    .catch(error => console.error('Errore nel caricamento dei dati:', error));
 });

@@ -67,6 +67,7 @@ h2 {
   overflow: hidden;
   padding: 1rem;
 }
+
 .table thead {
   background: #343a40;
   color: #fff;
@@ -75,6 +76,31 @@ h2 {
   background: rgba(0, 0, 0, 0.1);
   transition: background 0.3s;
 }
+
+#programma-pt {
+  height: 60vh;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 15px;
+  border: 2px solid #fff !important;
+  box-shadow: 0 0 20px rgba(0,0,0,0.6);
+}
+.programma-pt-pttable {
+  background: rgba(255,255,255,0.95);
+  border-radius: 15px;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+.pttable thead {
+  background: #343a40;
+  color: #fff;
+}
+.pttable tbody tr:hover {
+  background: rgba(0, 0, 0, 0.1);
+  transition: background 0.3s;
+}
+
 
 /* Pulsanti */
 .btn-primary {

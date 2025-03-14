@@ -5,10 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <title>Campionati della cultura e del talento</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body onload="initMap()">
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
@@ -42,48 +41,19 @@
           <div class="row">
             <div class="col-12">
               <h2 class="text-center mb-5">Scopri Tolfa</h2>
-              <div id="map"></div>
             </div>
           </div>
         </div>
       </section>
-
+      <div id="map" style="height: 500px; width: 100%;"></div>
     <!-- Programma -->
-    <section id="programma" class="bg-azzurro">
-      <div class="container">
-        <h2 class="text-center mb-5">Programma Evento (24-27 Aprile)</h2>
-        <div class="programma-table shadow-lg">
-          <div class="table-responsive">
-            <table class="table table-hover align-middle">
-              <thead class="table-dark">
-                <tr>
-                  <th scope="col">Data</th>
-                  <th scope="col">Attività</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>24 Aprile</td>
-                  <td>cerimonia d'apertura</td>
-                </tr>
-                <tr>
-                  <td>25 Aprile</td>
-                  <td>parlateci di..</td>
-                </tr>
-                <tr>
-                  <td>26 Aprile</td>
-                  <td>prova talento</td>
-                </tr>
-                <tr>
-                  <td>27 Aprile</td>
-                  <td>premiazione</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+      <!-- Programma -->
+      <section id="programma" class="bg-azzurro">
+        <div class="container-fluid">
+          <!-- Tabella generata dinamicamente -->
+          <div id="programma-content"></div>
         </div>
-      </div>
-      <div class="container">
+      <div class="container" class="bg-azzurro">
         <br>
         <h2 class="text-center mb-5">programma prove</h2>
         <div class="text-center">
@@ -139,5 +109,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
   <script src="js/main.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDo6LtyfbDiGIddJxMWjd_lTJvJdNaR2pc&callback=initMap" async defer></script>
 </body>
 </html>

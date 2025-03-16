@@ -353,3 +353,11 @@ section {
     max-height: 90%;
       }
 }
+
+@media (min-width: 992px) {
+  .navbar-expand-lg .navbar-collapse {
+      display: contents !important
+;
+      flex-basis: auto;
+  }
+}

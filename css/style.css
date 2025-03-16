@@ -18,21 +18,24 @@ body {
   backdrop-filter: blur(5px);
   background-color: rgba(0, 0, 0, 0.85) !important;
   font-size: 1.1rem;
-  height: 22%;
+  height: 12%; /* Ridotta l'altezza della navbar */
 }
 .navbar-brand {
-  font-size: 0.9rem;
+  font-size: 1.2rem; /* Aumentata la dimensione del font del logo */
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 15px; /* Posizionato il logo più in basso */
+  left: 15px; /* Posizionato il logo più a sinistra */
   padding: 10px;
 }
 .navbar-toggler {
   position: absolute;
-  font-size: 0.9rem;
-  top: 5px;
-  right: 5px;
-  padding: 20px;
+  font-size: 1.2rem; /* Aumentata la dimensione del font del toggler */
+  top:20%; /* Posizionato il toggler più in basso */
+  right: 5%; /* Posizionato il toggler più a destra */
+  padding: 10px;
+}
+.special-font {
+  font-family: 'Montserrat', serif
 }
 /* Hero Section */
 .hero {
@@ -64,6 +67,117 @@ h2 {
   color: #fff;
 }
 
+
+.weather-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.2rem;
+  text-align: center;
+  text-shadow: 1px 1px 3px rgba(0, 102, 255, 0.797);
+}
+
+.weather-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  pointer-events: auto;
+  overflow-y: visible;
+  min-height: min-content;
+}
+
+.weather-day {
+  position: relative;
+  backdrop-filter: blur(12px);
+  border-radius: 12px;
+  padding: 1%;
+  text-align: center;
+  width: 22%;
+}
+
+.weather-day::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;eight: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  border-radius: 12px;
+}
+
+.weather-day > * {
+  position: relative;
+  z-index: 2;
+}
+
+.weather-date {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  opacity: 0.9;
+}
+
+.weather-icon-tolfa {
+  width: 48px;
+  height: 48px;
+  margin: 0.5rem auto;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: drop-shadow(0px 5px 5px rgb(0, 102, 255));
+}
+
+.weather-temp-tolfa {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0.3rem 0;
+}
+
+.weather-condition {
+  font-size: 0.8rem;
+  opacity: 0.9;
+  text-transform: capitalize;
+}
+
+.weather-error {
+  text-align: center;
+  color: #ff6b6b;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+.weather-box {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  flex: 1 1 calc(25% - 1rem); /* 4 box per riga su desktop */
+}
+
+@media (max-width: 768px) {
+  .weather-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  
+  .weather-section {
+    width: 90%;
+    padding: 1rem;
+    max-height: 60vh;
+  }
+
+  .weather-icon-tolfa {
+    width: 40px;
+    height: 40px;
+  }
+
+  .weather-temp-tolfa {
+    font-size: 1.1rem;
+  }
+
+  .weather-box {
+    flex: 1 1 100%; /* 1 box per riga su mobile */
+  }
+}
 /* Mappa */
 #map {
   height: 60vh;
@@ -95,6 +209,8 @@ h2 {
   border-radius: 15px;
   overflow: hidden;
   padding: 1rem;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .table thead {
@@ -113,6 +229,7 @@ h2 {
 
 /* Miglioramenti per la tabella */
 .table {
+  
   border-radius: 15px;
   overflow: hidden;
 }
@@ -126,8 +243,6 @@ h2 {
   transition: background 0.3s;
 }
 
-
-
 /* Pulsanti */
 .btn-primary {
   background: linear-gradient(45deg, #0062E6, #33AEFF);
@@ -135,6 +250,7 @@ h2 {
   font-weight: 600;
   padding: 0.8rem 1.5rem;
   transition: transform 0.3s, background 0.3s;
+    width: fit-content; /* Rimuove la larghezza fissa */  
 }
 .btn-primary:hover {
   background: linear-gradient(45deg, #0052c6, #1a9edc);
@@ -147,11 +263,12 @@ h2 {
 .bg-azzurro {
   background-color: rgba(0, 191, 255, 0.3) !important;
 }
+
 /* Sezioni comuni */
 section {
-  padding: 5rem 0;
+  padding: 2rem 0;
   scroll-margin-top: 80px;
-}
+  }
 
 /* Ottimizzazione per schermi Full HD (1920px) */
 @media (min-width: 1920px) {
@@ -165,7 +282,7 @@ section {
   }
 }
 
-/* Ottimizzazione per dispositivi mobili (max-width: 400px) */
+/* Ottimizzazione per dispositivi mobili (max-width: 500px) */
 @media (max-width: 500px) {
   body {
     background: url('images/mobile.jpg') no-repeat center center fixed;
@@ -184,16 +301,16 @@ section {
   
   #map {
     aspect-ratio: 9 / 18;
-  }
+      }
   
   .navbar-brand {
     font-size: 0.9rem;
-  }
+      }
   
   .table th, .table td {
     padding: 0.5rem;
     font-size: 0.9rem;
-  }
+      }
   
   .btn {
     width: 100%;
@@ -205,5 +322,5 @@ section {
   }
   .table-responsive {
     max-height: 90%;
-  }
+      }
 }

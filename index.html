@@ -11,7 +11,7 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#"><p><img src="css/images/logo.png" width=100 height="50"></p></a>
+      <a class="navbar-brand" href="#"><img src="css/images/logo.png" width="140" height="50" alt="Logo"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -29,43 +29,52 @@
   <!-- Hero -->
   <header class="hero text-center">
     <div class="container">
-      <h1>Benvenuto alla XVI edizione<br> delle finali nazionali dei<br>Campionati della Cultura<br> e del Talento</h1>
-      <p class="lead mt-4">Scopri i punti di interesse e il programma dell'evento</p>
+      <h1>Benvenuto alla XVI edizione<br> delle finali nazionali dei<br><br><span class="special-font">CAMPIONATI DELLA CULTURA<br> E DEL TALENTO</span></h1>
+      <br>
+      <p class="lead" >Scopri i punti di interesse e il programma dell'evento</p>
     </div>
   </header>
-
+</section>
+<script src="script.js"></script>
+</body>
+</html>
   <main>
+    <!-- Sezione Meteo -->
+    <section id="meteo" class="bg-azzurro py-5">
+      <div class="container">
+        <div class="row weather-grid">
+          <!-- I giorni verranno aggiunti dinamicamente via JS -->
+        </div>
+      </div>
+    </section>
     <!-- Mappa -->
     <section id="mappa" class="bg-azzurro">
-        <div class="container-fluid px-4"> <!-- Container fluid con padding -->
-          <div class="row">
-            <div class="col-12">
-              <h2 class="text-center mb-5">Scopri Tolfa</h2>
-            </div>
+      <div class="container-fluid px-4">
+        <div class="row">
+          <div class="col-12">
+            <h2 class="text-center mb-5">Scopri Tolfa</h2>
           </div>
         </div>
-      </section>
-      <div id="map" style="height: 500px; width: 100%;"></div>
+        <div id="map" style="height: 500px; width: 100%;"></div>
+      </div>
+    </section>
+
     <!-- Programma -->
-      <!-- Programma -->
-      <section id="programma" class="bg-azzurro">
-        <div class="container-fluid">
-          <!-- Tabella generata dinamicamente -->
-          <div id="programma-content"></div>
-        </div>
-      <div class="container" class="bg-azzurro">
+    <section id="programma" class="bg-azzurro
+
+
+
+      <div class="container-fluid">
+        <!-- Tabella generata dinamicamente -->
+        <div id="programma-content"></div>
+      </div>
+      <div class="container">
         <br>
-        <h2 class="text-center mb-5">programma prove</h2>
-        <div class="text-center">
+        <h2 class="text-center mb-5">Programma Prove</h2>
+        <div class="d-flex justify-content-center align-items-center flex-column">
           <p class="lead"></p>
-          <a href="programma-pt.html" class="btn btn-primary btn-lg py-3">
-            prova talento
-          </a>
-          <br>
-          <br>
-          <a href="programma-pd.html" class="btn btn-primary btn-lg py-3">
-            parlateci di...
-          </a>
+          <a href="programma-pt.html" class="btn btn-primary btn-lg py-3 mb-3">Prova Talento</a>
+          <a href="programma-pd.html" class="btn btn-primary btn-lg py-3">Parlateci di...</a>
         </div>
       </div>
     </section>
@@ -74,12 +83,18 @@
     <section id="fotografica" class="bg-azzurro">
       <div class="container">
         <h2 class="text-center mb-5">Prova Fotografica</h2>
-        <div class="text-center">
-          <p class="lead">Carica il tuo scatto</p>
-          <a href="https://forms.gle/kKKx6wdXsUAyVtai9" class="btn btn-primary btn-lg" target="_blank">
+        <div class="d-flex justify-content-center align-items-center flex-column">
+          <a href="https://forms.gle/kKKx6wdXsUAyVtai9" class="btn btn-primary btn-lg py-3 mb-3" target="_blank">
             <span class="d-none d-md-inline">Carica la tua foto</span>
             <span class="d-md-none">Carica foto</span>
           </a>
+          
+          <div class="d-flex justify-content-center align-items-center flex-column">
+            <a href="https://forms.gle/kKKx6wdXsUAyVtai9" class="btn btn-primary btn-lg py-3" target="_blank">
+              <span class="d-none d-md-inline">Vota la tua foto preferita</span>
+              <span class="d-md-none">Vota la tua foto preferita</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -88,10 +103,11 @@
     <section id="caccia" class="bg-azzurro">
       <div class="container text-center">
         <h2 class="mb-5">Caccia al Tesoro</h2>
-        <div class="d-grid gap-3 col-lg-6 mx-auto">
+        <div class="d-flex justify-content-center align-items-center flex-column">
           <p class="lead">Scopri i segreti di Tolfa!</p>
-          <a href="treasure-hunt.html" class="btn btn-primary btn-lg py-3">
-            Inizia la Caccia!
+          <a href="treasure-hunt.html" class="btn btn-primary btn-lg" target="_blank">
+            <span class="d-none d-md-inline">Inizia la Caccia!</span>
+            <span class="d-md-none">Inizia</span>
           </a>
         </div>
       </div>
@@ -109,6 +125,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/meteo.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDo6LtyfbDiGIddJxMWjd_lTJvJdNaR2pc&callback=initMap" async defer></script>
 </body>
 </html>

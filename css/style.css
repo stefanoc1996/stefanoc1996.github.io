@@ -12,11 +12,39 @@ body {
   display: flex;
   flex-direction: column;
 }
+.navbar-collapse {
+  flex-grow: 100;
+  background-color: rgba(0, 0, 0, 0.94) !important;
+  box-shadow: 1;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+.navbar-collapse .nav-link {
+  color: #ffffff; /* Colore delle scritte */
+}
+.navbar-collapse .nav-link:hover {
+  color: #cccccc; /* Colore delle scritte al passaggio del mouse */
+}
+.navbar-nav {
+  text-align: center;
+}
 
+.nav-item {
+  margin: 0.5rem 0;
+}
+
+
+.navbar-toggler:focus {
+  outline: none;
+  box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.5);
+}
 /* Navbar */
 .navbar {
   backdrop-filter: blur(5px);
-  background-color: rgba(0, 0, 0, 0.85) !important;
+  background-color: rgb(0, 0, 0) !important;
   font-size: 1.1rem;
   height: 12%; /* Ridotta l'altezza della navbar */
 }
@@ -91,7 +119,7 @@ h2 {
   border-radius: 12px;
   padding: 1%;
   text-align: center;
-  width: 22%;
+  width: 21%;
 }
 
 .weather-day::before {
@@ -99,7 +127,8 @@ h2 {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;eight: 100%;
+  width: 100%;
+  height: 100%;
   background: rgba(0, 0, 0, 0.4);
   z-index: 1;
   border-radius: 12px;

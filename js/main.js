@@ -140,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function() {
             name: "LA ROCCA DEI FRANGIPANE",
             coords: { lat: 42.15247152653981, lng: 11.943477067877886 },
             info: "",
-            keywords: `<img src="iconmap/rocca.png" alt="Tour" width="16" height="16" style="margin-right: 4px;"> "'Tolfa: un viaggio tra storia e natura' Partenza primo 1° tour visita guidata della Rocca di Tolfa e sentiero 'belvedere'"`
+            keywords: `<img src="iconmap/rocca.png" alt="Tour" width="16" height="16" style="margin-right: 4px;"> "'Tolfa: un viaggio tra storia e natura' tour visita guidata della Rocca di Tolfa e sentiero 'belvedere'"`
           }
         ];
 

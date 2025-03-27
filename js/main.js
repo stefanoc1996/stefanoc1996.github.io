@@ -135,6 +135,12 @@ document.addEventListener("DOMContentLoaded", function() {
             info: "",
             keywords: `<img src="iconmap/registrazione.png" alt="Registrazione" width="16" height="16" style="margin-right: 4px;"> Accoglienza e registrazione<br>
                        <img src="iconmap/sorteggio.png" alt="Sorteggio" width="16" height="16" style="margin-right: 4px;"> Sorteggio prove`
+          },
+          {
+            name: "LA ROCCA DEI FRANGIPANE",
+            coords: { lat: 42.15247152653981, lng: 11.943477067877886 },
+            info: "",
+            keywords: `<img src="iconmap/rocca.png" alt="Tour" width="16" height="16" style="margin-right: 4px;"> "'Tolfa: un viaggio tra storia e natura' Partenza primo 1° tour visita guidata della Rocca di Tolfa e sentiero 'belvedere'"`
           }
         ];
 
@@ -208,6 +214,11 @@ document.addEventListener("DOMContentLoaded", function() {
             name: "GIARDINO DELLA VILLA COMUNALE",
             coords: { lat: 42.14849761781823, lng: 11.937441288508827 },
             info: "Registrazione"
+          },
+          {
+            name: "NUOVO PUNTO",
+            coords: { lat: 42.15247152653981, lng: 11.943477067877886 },
+            info: "Descrizione punto"
           }
         ];
 

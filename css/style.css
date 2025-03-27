@@ -421,7 +421,7 @@ section {
   }    
 }
 
-<<<<<<< HEAD
+
 /* Stile specifico per bottone di navigazione nella mappa */
 .map-navigate-btn {
   width: auto !important; /* Sovrascrive la larghezza fissa */
@@ -440,15 +440,12 @@ section {
   }
 }
 
-=======
->>>>>>> 21c0a27f1dedee068233cbb04606acce4162328f
 @media (min-width: 992px) {
   .navbar-expand-lg .navbar-collapse {
       display: contents !important
 ;
       flex-basis: auto;
   }
-<<<<<<< HEAD
 }
 
 .social-icons a {
@@ -459,6 +456,4 @@ section {
 .social-icons a:hover {
   transform: scale(1.2);
   color: #f8f9fa !important;
-=======
->>>>>>> 21c0a27f1dedee068233cbb04606acce4162328f
 }

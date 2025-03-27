@@ -72,7 +72,6 @@ body {
   padding: 6rem 1rem 3rem;
   margin-top: 56px; /* Compensa navbar fissa */
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
-  height: auto; 
 }
 .hero h1 {
   font-family: 'Montserrat', sans-serif;

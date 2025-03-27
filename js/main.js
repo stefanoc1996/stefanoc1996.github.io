@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var map = new google.maps.Map(document.getElementById('map'), {
       zoom: 15,
       center: center,
-      mapTypeId: 'satellite',
+      mapTypeId: 'roadmap',
       mapId: '414892f452311cd1'
     });
 

@@ -88,205 +88,207 @@ function changeBackground() {
   }, 100);
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-  function initMap() {
-    // Inizializza la mappa con il centro predefinito
-    var center = { lat: 42.149224, lng: 11.93406 };
-    var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 15,
-      center: center,
-      mapTypeId: 'roadmap',
-      mapId: '414892f452311cd1'
-    });
+// Move initMap to global scope, outside of any event listener
+function initMap() {
+  // Inizializza la mappa con il centro predefinito
+  var center = { lat: 42.149224, lng: 11.93406 };
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 15,
+    center: center,
+    mapTypeId: 'roadmap',
+    mapId: '414892f452311cd1'
+  });
 
-    // Carica il programma per arricchire i marker
-    fetch('programma.json')
-      .then(response => response.json())
-      .then(data => {
-        // Punti di interesse con attività associate
-        const points = [
-          { 
-            name: "TEATRO CLAUDIO", 
-            coords: { lat: 42.15025, lng: 11.93487 }, 
-            info: "",
-            keywords: `<img src="iconmap/cerimonia.png" alt="Cerimonia" width="16" height="16" style="margin-right: 4px;"> Cerimonia d'apertura<br>
-                       <img src="iconmap/corti.png" alt="Proiezione" width="16" height="16" style="margin-right: 4px;"> Proiezione corti<br>
-                       <img src="iconmap/talento.png" alt="Talento" width="16" height="16" style="margin-right: 4px;"> Prova talento<br>
-                       <img src="iconmap/battle.png" alt="Battle" width="16" height="16" style="margin-right: 4px;"> Battle<br>
-                       <img src="iconmap/premiazione.png" alt="Premiazione" width="16" height="16" style="margin-right: 4px;"> Premiazione`
-          },
-          {
-            name: "POLO CULTURALE",
-            coords: { lat: 42.14987940358026, lng: 11.930005844754685 },
-            info: "",
-            keywords: `<img src="iconmap/parlateci.png" alt="Prova" width="16" height="16" style="margin-right: 4px;"> Prova 'Parlateci di'`
-          },
-          {
-            name: "PIAZZA V.VENETO",
-            coords: { lat: 42.149440768633525, lng: 11.937874143985388 },
-            info: "",
-            keywords: `<img src="iconmap/staffetta.png" alt="Staffetta" width="16" height="16" style="margin-right: 4px;"> Staffetta della Cultura<br>
-                       <img src="iconmap/volley.png" alt="Volley" width="16" height="16" style="margin-right: 4px;"> Volleympiadi<br>
-                       <img src="iconmap/riscaldamento.png" alt="Riscaldamento" width="16" height="16" style="margin-right: 4px;"> Riscaldamento`
-          },
-          {
-            name: "GIARDINO DELLA VILLA COMUNALE",
-            coords: { lat: 42.14849761781823, lng: 11.937441288508827 },
-            info: "",
-            keywords: `<img src="iconmap/registrazione.png" alt="Registrazione" width="16" height="16" style="margin-right: 4px;"> Accoglienza e registrazione<br>
-                       <img src="iconmap/sorteggio.png" alt="Sorteggio" width="16" height="16" style="margin-right: 4px;"> Sorteggio prove`
-          },
-          {
-            name: "LA ROCCA DEI FRANGIPANE",
-            coords: { lat: 42.15247152653981, lng: 11.943477067877886 },
-            info: "",
-            keywords: `<img src="iconmap/rocca.png" alt="Tour" width="16" height="16" style="margin-right: 4px;"> "'Tolfa: un viaggio tra storia e natura' tour visita guidata della Rocca di Tolfa e sentiero 'belvedere'"`
-          }
-        ];
+  // Carica il programma per arricchire i marker
+  fetch('programma.json')
+    .then(response => response.json())
+    .then(data => {
+      // Punti di interesse con attività associate
+      const points = [
+        { 
+          name: "TEATRO CLAUDIO", 
+          coords: { lat: 42.15025, lng: 11.93487 }, 
+          info: "",
+          keywords: `<img src="iconmap/cerimonia.png" alt="Cerimonia" width="16" height="16" style="margin-right: 4px;"> Cerimonia d'apertura<br>
+                     <img src="iconmap/corti.png" alt="Proiezione" width="16" height="16" style="margin-right: 4px;"> Proiezione corti<br>
+                     <img src="iconmap/talento.png" alt="Talento" width="16" height="16" style="margin-right: 4px;"> Prova talento<br>
+                     <img src="iconmap/battle.png" alt="Battle" width="16" height="16" style="margin-right: 4px;"> Battle<br>
+                     <img src="iconmap/premiazione.png" alt="Premiazione" width="16" height="16" style="margin-right: 4px;"> Premiazione`
+        },
+        {
+          name: "POLO CULTURALE",
+          coords: { lat: 42.14987940358026, lng: 11.930005844754685 },
+          info: "",
+          keywords: `<img src="iconmap/parlateci.png" alt="Prova" width="16" height="16" style="margin-right: 4px;"> Prova 'Parlateci di'`
+        },
+        {
+          name: "PIAZZA V.VENETO",
+          coords: { lat: 42.149440768633525, lng: 11.937874143985388 },
+          info: "",
+          keywords: `<img src="iconmap/staffetta.png" alt="Staffetta" width="16" height="16" style="margin-right: 4px;"> Staffetta della Cultura<br>
+                     <img src="iconmap/volley.png" alt="Volley" width="16" height="16" style="margin-right: 4px;"> Volleympiadi<br>
+                     <img src="iconmap/riscaldamento.png" alt="Riscaldamento" width="16" height="16" style="margin-right: 4px;"> Riscaldamento`
+        },
+        {
+          name: "GIARDINO DELLA VILLA COMUNALE",
+          coords: { lat: 42.14849761781823, lng: 11.937441288508827 },
+          info: "",
+          keywords: `<img src="iconmap/registrazione.png" alt="Registrazione" width="16" height="16" style="margin-right: 4px;"> Accoglienza e registrazione<br>
+                     <img src="iconmap/sorteggio.png" alt="Sorteggio" width="16" height="16" style="margin-right: 4px;"> Sorteggio prove`
+        },
+        {
+          name: "LA ROCCA DEI FRANGIPANE",
+          coords: { lat: 42.15247152653981, lng: 11.943477067877886 },
+          info: "",
+          keywords: `<img src="iconmap/rocca.png" alt="Tour" width="16" height="16" style="margin-right: 4px;"> "'Tolfa: un viaggio tra storia e natura' tour visita guidata della Rocca di Tolfa e sentiero 'belvedere'"`
+        }
+      ];
 
-        // Aggiungi marker
-        points.forEach(point => {
-          // Define custom icon based on location name
-          let iconPath;
-          
-          switch(point.name) {
-            case "TEATRO CLAUDIO":
-              iconPath = 'iconmap/point.png';
-              break;
-            case "POLO CULTURALE":
-              iconPath = 'iconmap/point.png';
-              break;
-            case "PIAZZA V.VENETO":
-              iconPath = 'iconmap/point.png';
-              break;
-            case "GIARDINO DELLA VILLA COMUNALE":
-              iconPath = 'iconmap/point.png';
-              break;
-            case "LA ROCCA DEI FRANGIPANE":
-              iconPath = 'iconmap/point.png';
-              break;
-            default:
-              iconPath = 'iconmap/point.png';
-          }
-          
-          // Create marker with custom icon
-          const markerElement = document.createElement('div');
-          const markerImage = document.createElement('img');
-          markerImage.src = iconPath;
-          markerImage.style.width = '30px';
-          markerImage.style.height = '40px';
-          markerImage.style.filter = 'drop-shadow(2px 2px 2px rgba(0,0,0,0.5))';
-          markerElement.appendChild(markerImage);
-          
-          // Create advanced marker
-          const marker = new google.maps.marker.AdvancedMarkerElement({
-            position: point.coords,
-            map: map,
-            title: point.name,
-            content: markerElement,
-          });
-
-          // Create info window content
-          const contentString = `<div class="map-popup" style="color: black;">
-                          <h6 style="color: black; font-weight: bold;">${point.name}</h6>
-                          <p style="color: black;">${point.info}</p>
-                          <div class="activities-box" style="margin: 8px 0; padding: 8px; background-color: #f8f9fa; border-radius: 4px; color: black;">
-                            <strong style="color: black;">Attività:</strong><br>
-                            <span style="color: black;">${point.keywords}</span>
-                          </div>
-                          <div style="text-align: center; margin-top: 10px;">
-                            <a href="geo:${point.coords.lat},${point.coords.lng}" 
-                               class="btn btn-primary map-navigate-btn" style="width: auto; padding: 6px 12px; display: inline-block; margin: 0 auto;">
-                               <img src="iconmap/nav.png" alt="Naviga" width="16" height="16" style="margin-right: 4px; vertical-align: middle;"> Naviga
-                            </a>
-                          </div>
-                      </div>`;
-
-          // Create info window
-          const infoWindow = new google.maps.InfoWindow({
-            content: contentString,
-          });
-
-          // Add click listener to marker
-          marker.addListener("click", () => {
-            infoWindow.open({
-              anchor: marker,
-              map
-            });
-          });
+      // Aggiungi marker
+      points.forEach(point => {
+        // Define custom icon based on location name
+        let iconPath;
+        
+        switch(point.name) {
+          case "TEATRO CLAUDIO":
+            iconPath = 'iconmap/point.png';
+            break;
+          case "POLO CULTURALE":
+            iconPath = 'iconmap/point.png';
+            break;
+          case "PIAZZA V.VENETO":
+            iconPath = 'iconmap/point.png';
+            break;
+          case "GIARDINO DELLA VILLA COMUNALE":
+            iconPath = 'iconmap/point.png';
+            break;
+          case "LA ROCCA DEI FRANGIPANE":
+            iconPath = 'iconmap/point.png';
+            break;
+          default:
+            iconPath = 'iconmap/point.png';
+        }
+        
+        // Create marker with custom icon
+        const markerElement = document.createElement('div');
+        const markerImage = document.createElement('img');
+        markerImage.src = iconPath;
+        markerImage.style.width = '30px';
+        markerImage.style.height = '40px';
+        markerImage.style.filter = 'drop-shadow(2px 2px 2px rgba(0,0,0,0.5))';
+        markerElement.appendChild(markerImage);
+        
+        // Create advanced marker
+        const marker = new google.maps.marker.AdvancedMarkerElement({
+          position: point.coords,
+          map: map,
+          title: point.name,
+          content: markerElement,
         });
-      })
-      .catch(err => {
-        console.error('Errore nel caricamento del programma:', err);
-        // Fallback with advanced markers
-        const points = [
-          { 
-            name: "TEATRO CLAUDIO", 
-            coords: { lat: 42.15025, lng: 11.93487 }, 
-            info: "Via Teatro Claudio, 1"
-          },
-          {
-            name: "POLO CULTURALE",
-            coords: { lat: 42.14987940358026, lng: 11.930005844754685 },
-            info: "Polo Culturale di Tolfa"
-          },
-          {
-            name: "PIAZZA V.VENETO",
-            coords: { lat: 42.149440768633525, lng: 11.937874143985388 },
-            info: "-Staffetta della Cultura-"
-          },
-          {
-            name: "GIARDINO DELLA VILLA COMUNALE",
-            coords: { lat: 42.14849761781823, lng: 11.937441288508827 },
-            info: "Registrazione"
-          },
-          {
-            name: "NUOVO PUNTO",
-            coords: { lat: 42.15247152653981, lng: 11.943477067877886 },
-            info: "Descrizione punto"
-          }
-        ];
 
-        // Add markers using Advanced Markers API
-        points.forEach(point => {
-          const markerView = new google.maps.marker.PinView({
-            background: '#1E88E5',
-            borderColor: '#0D47A1',
-            glyphColor: '#FFFFFF',
-          });
+        // Create info window content
+        const contentString = `<div class="map-popup" style="color: black;">
+                        <h6 style="color: black; font-weight: bold;">${point.name}</h6>
+                        <p style="color: black;">${point.info}</p>
+                        <div class="activities-box" style="margin: 8px 0; padding: 8px; background-color: #f8f9fa; border-radius: 4px; color: black;">
+                          <strong style="color: black;">Attività:</strong><br>
+                          <span style="color: black;">${point.keywords}</span>
+                        </div>
+                        <div style="text-align: center; margin-top: 10px;">
+                          <a href="geo:${point.coords.lat},${point.coords.lng}" 
+                             class="btn btn-primary map-navigate-btn" style="width: auto; padding: 6px 12px; display: inline-block; margin: 0 auto;">
+                             <img src="iconmap/nav.png" alt="Naviga" width="16" height="16" style="margin-right: 4px; vertical-align: middle;"> Naviga
+                          </a>
+                        </div>
+                    </div>`;
 
-          const marker = new google.maps.marker.AdvancedMarkerElement({
-            position: point.coords,
-            map: map,
-            title: point.name,
-            content: markerView.element,
-          });
+        // Create info window
+        const infoWindow = new google.maps.InfoWindow({
+          content: contentString,
+        });
 
-          const contentString = `<div class="map-popup">
-                      <h6>${point.name}</h6>
-                      <p>${point.info}</p>
-                      <a href="https://www.google.com/maps/dir/?api=1&destination=${point.coords.lat},${point.coords.lng}" 
-                         target="_blank" class="btn btn-sm btn-primary">
-                         ➡️
-                      </a>
-                  </div>`;
-
-          const infoWindow = new google.maps.InfoWindow({
-            content: contentString,
-          });
-
-          marker.addListener("click", () => {
-            infoWindow.open({
-              anchor: marker,
-              map
-            });
+        // Add click listener to marker
+        marker.addListener("click", () => {
+          infoWindow.open({
+            anchor: marker,
+            map
           });
         });
       });
-  }
+    })
+    .catch(err => {
+      console.error('Errore nel caricamento del programma:', err);
+      // Fallback with advanced markers
+      const points = [
+        { 
+          name: "TEATRO CLAUDIO", 
+          coords: { lat: 42.15025, lng: 11.93487 }, 
+          info: "Via Teatro Claudio, 1"
+        },
+        {
+          name: "POLO CULTURALE",
+          coords: { lat: 42.14987940358026, lng: 11.930005844754685 },
+          info: "Polo Culturale di Tolfa"
+        },
+        {
+          name: "PIAZZA V.VENETO",
+          coords: { lat: 42.149440768633525, lng: 11.937874143985388 },
+          info: "-Staffetta della Cultura-"
+        },
+        {
+          name: "GIARDINO DELLA VILLA COMUNALE",
+          coords: { lat: 42.14849761781823, lng: 11.937441288508827 },
+          info: "Registrazione"
+        },
+        {
+          name: "NUOVO PUNTO",
+          coords: { lat: 42.15247152653981, lng: 11.943477067877886 },
+          info: "Descrizione punto"
+        }
+      ];
 
-  window.initMap = initMap;
+      // Add markers using Advanced Markers API
+      points.forEach(point => {
+        const markerView = new google.maps.marker.PinView({
+          background: '#1E88E5',
+          borderColor: '#0D47A1',
+          glyphColor: '#FFFFFF',
+        });
 
+        const marker = new google.maps.marker.AdvancedMarkerElement({
+          position: point.coords,
+          map: map,
+          title: point.name,
+          content: markerView.element,
+        });
+
+        const contentString = `<div class="map-popup">
+                    <h6>${point.name}</h6>
+                    <p>${point.info}</p>
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=${point.coords.lat},${point.coords.lng}" 
+                       target="_blank" class="btn btn-sm btn-primary">
+                       ➡️
+                    </a>
+                </div>`;
+
+        const infoWindow = new google.maps.InfoWindow({
+          content: contentString,
+        });
+
+        marker.addListener("click", () => {
+          infoWindow.open({
+            anchor: marker,
+            map
+          });
+        });
+      });
+    });
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Remove the initMap function declaration from here
+  // but keep the rest of your event handlers
+  
   function showProgram(day) {
     fetch('programma.json')
       .then(response => response.json())

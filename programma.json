@@ -2,21 +2,21 @@
     "programma": [
         {
             "data": "24 Aprile",
-            "attivita": "accoglienza, registrazione obbligatoria delle squadre e sorteggio prove 'talento' e 'parlateci di..'",
+            "attivita": "Accoglienza, registrazione obbligatoria delle squadre e sorteggio 'Prova Talento' e 'Prova Parlateci di...'",
             "ora": "16:00 - 17:00",
-            "luogo": "giardino della Villa Comunale"
+            "luogo": "Giardino della Villa Comunale"
         },
         {
             "data": "24 Aprile",
-            "attivita": "parata delle squadre, preceduta dalla Banda Comunale, dal giardino della Villa Comunale al Teatro Claudio e cerimonia d'apertura e saluto delle autorità e degli organizzatori",
+            "attivita": "Parata delle squadre, preceduta dalla Banda Comunale, dal Giardino della Villa Comunale al Teatro Claudio, cerimonia d'apertura e saluto delle autorità e degli organizzatori",
             "ora": "17:00",
-            "luogo": "Teatro Claudio"
+            "luogo": " Dal Giardino della Villa Comunale"
         },
         {
             "data": "24 Aprile",
-            "attivita": "inaugurazione 'Area Docenti' - Sorteggio 'Staffetta della Cultura'",
+            "attivita": "Inaugurazione 'Area Docenti' - Sorteggio 'Staffetta della Cultura'",
             "ora": "18:30",
-            "luogo": "spazio esterno al Teatro Claudio"
+            "luogo": "Spazio esterno al Teatro Claudio"
         },
         {
             "data": "24 Aprile",
@@ -34,13 +34,13 @@
             "data": "25 Aprile",
             "attivita": "Riscaldamento muscolare",
             "ora": "8:30",
-            "luogo": "Piazza Veneto"
+            "luogo": "Piazza V. Veneto"
         },
         {
             "data": "25 Aprile",
             "attivita": "Staffetta della Cultura",
             "ora": "9:00 - 13:30",
-            "luogo": "Piazza Veneto"
+            "luogo": "Piazza V. Veneto"
         },
         {
             "data": "25 Aprile",
@@ -58,7 +58,7 @@
             "data": "25 Aprile",
             "attivita": "Volleympiadi",
             "ora": "15:30 - 18:30",
-            "luogo": "Piazza Veneto"
+            "luogo": "Piazza V. Veneto"
         },
         {
             "data": "25 Aprile",
@@ -73,13 +73,13 @@
         },
         {
             "data": "26 Aprile",
-            "attivita": "prova 'Parlateci di'",
+            "attivita": "Prova 'Parlateci di'",
             "ora": "9:00 - 13:30",
             "luogo": "Polo Culturale"
         },
         {
             "data": "26 Aprile",
-            "attivita": "prova 'Talento'",
+            "attivita": "Prova Talento",
             "ora": "9:00 - 13:00",
             "luogo": "Teatro Claudio"
         },
@@ -87,7 +87,7 @@
             "data": "26 Aprile",
             "attivita": "Volleympiadi",
             "ora": "10:00 - 13:00",
-            "luogo": "Piazza Veneto"
+            "luogo": "Piazza V. Veneto"
         },
         {
             "data": "26 Aprile",
@@ -97,13 +97,13 @@
         },
         {
             "data": "26 Aprile",
-            "attivita": "prove generali 'Prova Talento' prime 20 squadre",
+            "attivita": "Briefing 'Prova Talento' seconde 19 squadre sorteggiate",
             "ora": "14:15 - 17:45",
             "luogo": "Teatro Claudio"
         },
         {
             "data": "26 Aprile",
-            "attivita": "Audizioni battle 'danza' e 'musicisti'",
+            "attivita": "Audizioni battle 'danza' e 'musica'",
             "ora": "17:45 - 20:00",
             "luogo": "Teatro Claudio"
         },
@@ -111,7 +111,7 @@
             "data": "26 Aprile",
             "attivita": "Volleympiadi",
             "ora": "15:30 - 18:30",
-            "luogo": "Piazza Veneto"
+            "luogo": "Piazza V. Veneto"
         },
         {
             "data": "26 Aprile",
@@ -133,13 +133,13 @@
         },
         {
             "data": "27 Aprile",
-            "attivita": "prova 'Parlateci di'",
+            "attivita": "prova Parlateci di...",
             "ora": "9:00 - 13:30",
             "luogo": "Polo Culturale"
         },
         {
             "data": "27 Aprile",
-            "attivita": "prova 'Talento'",
+            "attivita": "prova Talento",
             "ora": "9:00 - 13:00",
             "luogo": "Teatro Claudio"
         },
@@ -147,17 +147,17 @@
             "data": "27 Aprile",
             "attivita": "Volleympiadi",
             "ora": "10:00 - 13:00",
-            "luogo": "Piazza Veneto"
+            "luogo": "Piazza V. Veneto"
         },
         {
             "data": "27 Aprile",
             "attivita": "Volleympiadi",
             "ora": "14:30 - 16:00",
-            "luogo": "Piazza Veneto"
+            "luogo": "Piazza V. Veneto"
         },
         {
             "data": "27 Aprile",
-            "attivita": "finali 'battle', cerimonia conclusiva e premiazione",
+            "attivita": "finali 'Battle', cerimonia conclusiva e premiazione",
             "ora": "16:15 - 20:00",
             "luogo": "Teatro Claudio"
         }

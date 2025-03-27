@@ -2,49 +2,164 @@
     "programma": [
         {
             "data": "24 Aprile",
-            "attivita": "accoglienza, registrazione delle squadre, sorteggio scaletta 'prova talento'",
-            "ora": "15:30 - 17:00"
-          },
-          {
+            "attivita": "accoglienza, registrazione obbligatoria delle squadre e sorteggio prove 'talento' e 'parlateci di..'",
+            "ora": "16:00 - 17:00",
+            "luogo": "giardino della Villa Comunale"
+        },
+        {
             "data": "24 Aprile",
-            "attivita": "cerimonia d'apertura e parata autorità",
-            "ora": "17:00 - 18:30"
-          },
-          {
+            "attivita": "parata delle squadre, preceduta dalla Banda Comunale, dal giardino della Villa Comunale al Teatro Claudio e cerimonia d'apertura e saluto delle autorità e degli organizzatori",
+            "ora": "17:00",
+            "luogo": "Teatro Claudio"
+        },
+        {
             "data": "24 Aprile",
-            "attivita": "proiezione dei cortometraggi presso il Teatro Claudio",
-            "ora": "16:00"
-          },
-          {
+            "attivita": "inaugurazione 'Area Docenti' - Sorteggio 'Staffetta della Cultura'",
+            "ora": "18:30",
+            "luogo": "spazio esterno al Teatro Claudio"
+        },
+        {
             "data": "24 Aprile",
-            "attivita": "termine giornata",
-            "ora": "22:00"
-          },
-          {
+            "attivita": "Audizioni Battle",
+            "ora": "18:30",
+            "luogo": "Teatro Claudio"
+        },
+        {
+            "data": "24 Aprile",
+            "attivita": "Proiezione di 13 cortometraggi",
+            "ora": "20:45 - 22:00",
+            "luogo": "Teatro Claudio"
+        },
+        {
             "data": "25 Aprile",
-            "attivita": "svolgimento delle prove",
-            "ora": "09:00 - 20:00"
-          },
-          {
+            "attivita": "Riscaldamento muscolare",
+            "ora": "8:30",
+            "luogo": "Piazza Veneto"
+        },
+        {
             "data": "25 Aprile",
-            "attivita": "proiezione dei cortometraggi presso il Teatro Claudio",
-            "ora": "20:45 - 23:00"
-          },
-          {
+            "attivita": "Staffetta della Cultura",
+            "ora": "9:00 - 13:30",
+            "luogo": "Piazza Veneto"
+        },
+        {
+            "data": "25 Aprile",
+            "attivita": "Briefing 'Prova Talento' prime 20 squadre sorteggiate",
+            "ora": "14:15 - 17:45",
+            "luogo": "Teatro Claudio"
+        },
+        {
+            "data": "25 Aprile",
+            "attivita": "Audizioni battle",
+            "ora": "17:45 - 20:00",
+            "luogo": "Teatro Claudio"
+        },
+        {
+            "data": "25 Aprile",
+            "attivita": "Volleympiadi",
+            "ora": "15:30 - 18:30",
+            "luogo": "Piazza Veneto"
+        },
+        {
+            "data": "25 Aprile",
+            "attivita": "Inizio 'Caccia al Tesoro di Tolfa'",
+            "ora": "15:30"
+        },
+        {
+            "data": "25 Aprile",
+            "attivita": "Proiezioni di 13 cortometraggi",
+            "ora": "20:30 - 23:00",
+            "luogo": "Teatro Claudio"
+        },
+        {
             "data": "26 Aprile",
-            "attivita": "svolgimento delle prove",
-            "ora": "09:00 - 20:00"
-          },
-          {
+            "attivita": "prova 'Parlateci di'",
+            "ora": "9:00 - 13:30",
+            "luogo": "Polo Culturale"
+        },
+        {
             "data": "26 Aprile",
-            "attivita": "proiezione dei cortometraggi presso il Teatro Claudio",
-            "ora": "20:45 - 23:00"
-          },
-          {
+            "attivita": "prova 'Talento'",
+            "ora": "9:00 - 13:00",
+            "luogo": "Teatro Claudio"
+        },
+        {
+            "data": "26 Aprile",
+            "attivita": "Volleympiadi",
+            "ora": "10:00 - 13:00",
+            "luogo": "Piazza Veneto"
+        },
+        {
+            "data": "26 Aprile",
+            "attivita": "'Tolfa: un viaggio tra storia e natura' Partenza primo 1° tour visita guidata della Rocca di Tolfa e sentiero 'belvedere'",
+            "ora": "10:30",
+            "luogo": "Rocca di Tolfa"
+        },
+        {
+            "data": "26 Aprile",
+            "attivita": "prove generali 'Prova Talento' prime 20 squadre",
+            "ora": "14:15 - 17:45",
+            "luogo": "Teatro Claudio"
+        },
+        {
+            "data": "26 Aprile",
+            "attivita": "Audizioni battle 'danza' e 'musicisti'",
+            "ora": "17:45 - 20:00",
+            "luogo": "Teatro Claudio"
+        },
+        {
+            "data": "26 Aprile",
+            "attivita": "Volleympiadi",
+            "ora": "15:30 - 18:30",
+            "luogo": "Piazza Veneto"
+        },
+        {
+            "data": "26 Aprile",
+            "attivita": "'Tolfa: un viaggio tra storia e natura' Partenza primo 1° tour visita guidata della Rocca di Tolfa e sentiero 'belvedere'",
+            "ora": "17:00",
+            "luogo": "Rocca di Tolfa"
+        },
+        {
+            "data": "26 Aprile",
+            "attivita": "'Accendi il pomeriggio di Tolfa, libera la tua Energia con Jam Session e Balli di Gruppo'",
+            "ora": "16:30 - 19:00",
+            "luogo": "Palco esterno Teatro Claudio"
+        },
+        {
+            "data": "26 Aprile",
+            "attivita": "Proiezioni di 13 cortometraggi",
+            "ora": "20:30 - 23:00",
+            "luogo": "Teatro Claudio"
+        },
+        {
             "data": "27 Aprile",
-            "attivita": "svolgimento delle prove, cerimonia di chiusura e premiazione",
-            "ora": "09:00 - 20:00"
-          }
+            "attivita": "prova 'Parlateci di'",
+            "ora": "9:00 - 13:30",
+            "luogo": "Polo Culturale"
+        },
+        {
+            "data": "27 Aprile",
+            "attivita": "prova 'Talento'",
+            "ora": "9:00 - 13:00",
+            "luogo": "Teatro Claudio"
+        },
+        {
+            "data": "27 Aprile",
+            "attivita": "Volleympiadi",
+            "ora": "10:00 - 13:00",
+            "luogo": "Piazza Veneto"
+        },
+        {
+            "data": "27 Aprile",
+            "attivita": "Volleympiadi",
+            "ora": "14:30 - 16:00",
+            "luogo": "Piazza Veneto"
+        },
+        {
+            "data": "27 Aprile",
+            "attivita": "finali 'battle', cerimonia conclusiva e premiazione",
+            "ora": "16:15 - 20:00",
+            "luogo": "Teatro Claudio"
+        }
     ]
-  }
-  
+}

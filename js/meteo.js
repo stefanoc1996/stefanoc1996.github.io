@@ -88,7 +88,6 @@ function createWeatherDay(date, code, maxTemp, minTemp) {
   dayElement.className = 'weather-day';
   
   const formattedDate = new Date(date + 'T00:00:00').toLocaleDateString('it-IT', {
-    weekday: 'long',
     day: 'numeric',
     month: 'long'
   });
@@ -96,7 +95,7 @@ function createWeatherDay(date, code, maxTemp, minTemp) {
   dayElement.innerHTML = `
     <div class="weather-date">${formattedDate}</div>
     <img class="weather-icon-tolfa" 
-         src="icons/${getIconName(code)}.svg" 
+         src="icons/${getIconName(code)}.png" 
          alt="${weatherCodeMap[code]}">
     </div>
     <div class="weather-temp-tolfa">

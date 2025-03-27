@@ -93,7 +93,7 @@ function initMap() {
   // Inizializza la mappa con il centro predefinito
   var center = { lat: 42.149224, lng: 11.93406 };
   var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 17,
+    zoom: 15,
     center: center,
     mapTypeId: 'roadmap',
     mapId: '414892f452311cd1'

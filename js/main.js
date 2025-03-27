@@ -146,19 +146,44 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Aggiungi marker
         points.forEach(point => {
-          // Create marker content element
-          const markerView = new google.maps.marker.PinView({
-            background: '#1E88E5',
-            borderColor: '#0D47A1',
-            glyphColor: '#FFFFFF',
-          });
-
+          // Define custom icon based on location name
+          let iconPath;
+          
+          switch(point.name) {
+            case "TEATRO CLAUDIO":
+              iconPath = 'iconmap/point.png';
+              break;
+            case "POLO CULTURALE":
+              iconPath = 'iconmap/point.png';
+              break;
+            case "PIAZZA V.VENETO":
+              iconPath = 'iconmap/point.png';
+              break;
+            case "GIARDINO DELLA VILLA COMUNALE":
+              iconPath = 'iconmap/point.png';
+              break;
+            case "LA ROCCA DEI FRANGIPANE":
+              iconPath = 'iconmap/point.png';
+              break;
+            default:
+              iconPath = 'iconmap/point.png';
+          }
+          
+          // Create marker with custom icon
+          const markerElement = document.createElement('div');
+          const markerImage = document.createElement('img');
+          markerImage.src = iconPath;
+          markerImage.style.width = '30px';
+          markerImage.style.height = '40px';
+          markerImage.style.filter = 'drop-shadow(2px 2px 2px rgba(0,0,0,0.5))';
+          markerElement.appendChild(markerImage);
+          
           // Create advanced marker
           const marker = new google.maps.marker.AdvancedMarkerElement({
             position: point.coords,
             map: map,
             title: point.name,
-            content: markerView.element,
+            content: markerElement,
           });
 
           // Create info window content

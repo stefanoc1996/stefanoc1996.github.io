@@ -9,6 +9,7 @@
     <link href="css/styleTreasureHunt.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
     <link href="css/images/logo.png" rel="icon" type="image/x-icon">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
 </head>
 <body>
     <div class="background-container">
@@ -37,7 +38,92 @@
         <h1>Caccia al Tesoro!</h1>
         <p>Pronto a iniziare l'avventura? Trova gli indizi e scopri il tesoro nascosto!</p>
         
-        <button class="treasure-button" onclick="ribadisci()">NON ANCORA DISPONIBILE</button>
+        <!-- Contenitore per i personaggi con nuvolette -->
+        <div id="characters-container"></div>
+
+        <!-- Selezione del capitolo -->
+        <div class="chapter-container">
+            <h2 class="chapter-title mb-3">Scegli il capitolo:</h2>
+            <div class="chapter-buttons"></div>
+        </div>
+        
+        <!-- Scanner QR Code -->
+        <div id="qr-scanner-container" style="display: none;">
+            <h3 class="mb-3">Scansiona il QR Code</h3>
+            <div class="qr-scanner-box">
+                <div id="reader" class="mb-3"></div>
+                <button id="start-scanner" class="btn btn-success mb-3">Avvia Scanner</button>
+                <button id="stop-scanner" class="btn btn-danger mb-3" style="display:none;">Ferma Scanner</button>
+                <p class="qr-info">Punta la fotocamera al QR Code per ottenere l'indizio</p>
+            </div>
+            <div class="qr-scanner-manual">
+                <p class="text-center mb-2">Se non riesci a scannerizzare, inserisci manualmente il codice:</p>
+                <div class="input-group mb-3">
+                    <input type="text" id="manual-code-input" class="form-control" placeholder="Inserisci il codice QR...">
+                    <button class="btn btn-primary" type="button" id="submit-manual-code">Vai</button>
+                </div>
+            </div>
+            <div id="scanner-feedback" class="mt-2 text-center"></div>
+        </div>
+        
+        <!-- Domande del capitolo -->
+        <div class="questions-container" style="display: none;">
+            <h3 id="chapter-title" class="mb-3"></h3>
+            <div class="question-box">
+                <h4 id="question-title" class="mb-3">Domanda <span id="question-number">1</span>/3</h4>
+                <p id="question-text" class="mb-4"></p>
+                
+                <!-- Storia che si svela progressivamente -->
+                <div class="story-container mb-4">
+                    <p id="story-text" class="story-text p-3"></p>
+                </div>
+                
+                <!-- Zona inserimento risposta -->
+                <div class="answer-input-box">
+                    <div class="input-group mb-3">
+                        <input type="text" id="answer-input" class="form-control" placeholder="La tua risposta...">
+                        <button class="btn btn-primary" type="button" id="submit-answer">Verifica</button>
+                    </div>
+                    <div id="answer-feedback" class="mt-2"></div>
+                </div>
+            </div>
+
+            <!-- Contenitore del personaggio con nuvoletta -->
+            <div class="character-container">
+                <div class="character-bubble">
+                    <div class="character-info">
+                        <h5 id="character-name">Nome del personaggio</h5>
+                        <p id="character-description" class="character-role">Ruolo personaggio</p>
+                    </div>
+                    <div class="speech-bubble">
+                        <p id="character-speech">Il testo del personaggio verrà visualizzato qui.</p>
+                        <div class="speech-bubble-arrow"></div>
+                    </div>
+                </div>
+                <div class="character-image-container">
+                    <img id="character-img" src="" alt="Personaggio">
+                </div>
+            </div>
+        </div>
+        
+        <!-- Inserimento codice di sblocco capitolo -->
+        <div id="unlock-chapter-container" style="display: none;">
+            <h3 class="mb-3">Sblocca il prossimo capitolo</h3>
+            <div class="unlock-code-box">
+                <p class="text-center mb-2">Inserisci il codice di sblocco per accedere al prossimo capitolo:</p>
+                <div class="input-group mb-3">
+                    <input type="text" id="unlock-code-input" class="form-control" placeholder="Inserisci il codice...">
+                    <button class="btn btn-primary" type="button" id="submit-unlock-code">Sblocca</button>
+                </div>
+                <div id="unlock-feedback" class="mt-2 text-center"></div>
+            </div>
+        </div>
+        
+        <!-- Mappa (nascosta inizialmente) -->
+        <div id="treasure-map-container" style="display: none;">
+            <h3 class="mb-3">Mappa del Tesoro</h3>
+            <div id="treasure-map" style="height: 400px; width: 100%;"></div>
+        </div>
         
         <div class="mt-4">
             <a href="index.html" class="btn-back">
@@ -46,7 +132,37 @@
         </div>
     </div>
 
+    <!-- Modal per il completamento di un capitolo -->
+    <div class="modal fade" id="chapter-completed-modal" tabindex="-1" aria-labelledby="chapter-completed-title" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="chapter-completed-title">Capitolo Completato!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center">
+                        <i class="bi bi-trophy display-1 text-warning mb-3"></i>
+                        <p id="chapter-completed-message">Hai completato tutte le domande di questo capitolo!</p>
+                        <p>Un nuovo punto è apparso sulla mappa del tesoro.</p>
+                        <div id="unlock-code-display" class="unlock-code-box mt-4">
+                            <h4>Codice di sblocco:</h4>
+                            <p id="unlock-code" class="unlock-code">CODICE</p>
+                            <p class="text-muted">Questo codice ti servirà per sbloccare il prossimo capitolo</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Continua</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUvj774B1cKW6L0ECSJQi9aCJl0QbEpIg&callback=initMapPlaceholder&libraries=marker&v=beta" async defer></script>
     <script src="js/scriptTreasureHunt.js"></script>
 </body>
 </html>

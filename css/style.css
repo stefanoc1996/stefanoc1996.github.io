@@ -1,32 +1,155 @@
 /* Import dei font da Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;600;700&family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@400;600;700&family=Roboto:wght@400;700&display=swap');
 
-/* Base styles */
+/* Definizione delle variabili colore per mantenere coerenza - ridotto a 2 colori principali */
+:root {
+  /* Colori principali - solo 2 colori */
+  --primary-blue: #1e5f94;
+  --primary-blue-light: #2d8fd5;
+  --primary-blue-dark: #0d3b64;
+  
+  /* Colore secondario - oro/ambra */
+  --accent-gold: #e6b54c;
+  --accent-gold-light: #f3d583;
+  --accent-gold-dark: #d39a27;
+  
+  /* Sfondi e overlay */
+  --dark-bg: rgba(9, 25, 42, 0.9);
+  --light-text: #f5f7fa;
+  --blue-overlay: rgba(12, 35, 64, 0.7);
+  --blue-overlay-light: rgba(30, 95, 148, 0.25);
+  --gold-overlay: rgba(230, 181, 76, 0.25);
+  
+  /* Gradienti - solo blu e oro */
+  --blue-gradient: linear-gradient(135deg, #1e5f94, #0d3b64);
+  --blue-gradient-light: linear-gradient(135deg, #2d8fd5, #1e5f94);
+  --gold-gradient: linear-gradient(135deg, #f3d583, #e6b54c);
+  --gold-gradient-dark: linear-gradient(135deg, #e6b54c, #d39a27);
+  
+  /* Ombre */
+  --blue-glow: 0 0 15px rgba(45, 143, 213, 0.5);
+  --gold-glow: 0 0 15px rgba(230, 181, 76, 0.5);
+}
+
+/* Reset e stili base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: all 0.3s ease-out;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
 body {
   background: none;
   font-family: 'Montserrat', sans-serif;
-  font-weight: 600; /* Semi-bold per il corpo del testo */
-  color: #ececec;
+  font-weight: 600;
+  color: var(--light-text);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
 }
+
+/* Loader per il caricamento iniziale */
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Transizione per il contenuto */
+.content {
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+/* Navbar avanzata */
+.navbar {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color: var(--dark-bg) !important;
+  font-size: 1.1rem;
+  height: 100px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+  z-index: 100;
+}
+
+.navbar-brand {
+  font-size: 1.2rem;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  padding: 10px;
+  transition: transform 0.3s;
+}
+
+.navbar-brand:hover {
+  transform: scale(1.05);
+}
+
+.navbar-toggler {
+  position: absolute;
+  font-size: 1.2rem;
+  top: 20%;
+  right: 5%;
+  padding: 10px;
+  border: none;
+}
+
+.navbar-toggler:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
 .navbar-collapse {
   flex-grow: 100;
   background-color: rgba(0, 0, 0, 0.94) !important;
-  box-shadow: 1;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
   position: absolute;
   top: 100%;
   left: 0;
   width: 100%;
-  z-index: 1;
+  z-index: 1000;
 }
+
 .navbar-collapse .nav-link {
-  color: #ffffff; /* Colore delle scritte */
+  color: #ffffff;
+  font-weight: 600;
+  position: relative;
+  padding: 0.5rem 1rem;
 }
-.navbar-collapse .nav-link:hover {
-  color: #cccccc; /* Colore delle scritte al passaggio del mouse */
+
+.navbar-collapse .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-blue-light);
+  transition: width 0.3s, left 0.3s;
 }
+
+.navbar-collapse .nav-link:hover::after {
+  width: 80%;
+  left: 10%;
+}
+
 .navbar-nav {
   text-align: center;
 }
@@ -35,424 +158,405 @@ body {
   margin: 0.5rem 0;
 }
 
-.navbar-toggler:focus {
-  outline: none;
-  box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.5);
+@media (min-width: 992px) {
+  .navbar-expand-lg .navbar-collapse {
+    display: flex !important;
+    flex-basis: auto;
+    background-color: transparent !important;
+    box-shadow: none;
+    position: static;
+  }
+  
+  .navbar-nav {
+    margin-left: auto;
+  }
+  
+  .nav-item {
+    margin: 0 0.5rem;
+  }
+  
+  .navbar-collapse .nav-link:hover {
+    color: #cccccc;
+  }
 }
-/* Navbar */
-.navbar {
-  backdrop-filter: blur(5px);
-  background-color: rgb(0, 0, 0) !important;
-  font-size: 1.1rem;
-  height: 100px; /* Ridotta l'altezza della navbar */
-}
-.navbar-brand {
-  font-size: 1.2rem; /* Aumentata la dimensione del font del logo */
-  position: absolute;
-  top: 15px; /* Posizionato il logo più in basso */
-  left: 15px; /* Posizionato il logo più a sinistra */
-  padding: 10px;
-}
-.navbar-toggler {
-  position: absolute;
-  font-size: 1.2rem; /* Aumentata la dimensione del font del toggler */
-  top:20%; /* Posizionato il toggler più in basso */
-  right: 5%; /* Posizionato il toggler più a destra */
-  padding: 10px;
-}
-.special-font {
-  font-family: 'Montserrat', serif
-}
-/* Hero Section */
+
+/* Hero Section - mantengo il suo sfondo specifico */
 .hero {
-  background-color: rgba(0, 0, 0, 0.65);
+  background-color: rgba(0, 29, 54, 0.75);
   color: #fff;
-  padding: 6rem 1rem 3rem;
-  margin-top: 56px; /* Compensa navbar fissa */
+  padding: 8rem 1rem 4rem;
+  margin-top: 56px;
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
-}
-.hero h1 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700; /* Bold per i titoli */
-  font-size: 3.5rem;
-  letter-spacing: 1px;
-}
-.hero p.lead {
-  font-size: 1.5rem;
-  font-weight: 400;
-  margin-top: 1rem;
-}
-
-.social-icons {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-
-/* Titoli generici */
-h2 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700; /* Bold per i titoli */
-  font-size: 2.5rem;
-  text-align: center;
-  margin-bottom: 2rem;
-  color: #fff;
-}
-
-
-.weather-section h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1.2rem;
-  text-align: center;
-  text-shadow: 1px 1px 3px rgba(0, 102, 255, 0.797);
-}
-
-.weather-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-  pointer-events: auto;
-  overflow-y: visible;
-  min-height: min-content;
-}
-
-.weather-day {
   position: relative;
-  backdrop-filter: blur(12px);
-  border-radius: 12px;
-  padding: 1%;
-  text-align: center;
-  width: 21%;
+  overflow: hidden;
+  z-index: 2;
 }
 
-.weather-day::before {
+.hero::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent, rgba(0, 0, 0, 0.8));
   z-index: 1;
-  border-radius: 12px;
+  pointer-events: none;
 }
 
-.weather-day > * {
+.hero > .container {
   position: relative;
   z-index: 2;
 }
 
-.weather-date {
-  font-size: 0.9rem;
-  margin-bottom: 0.5rem;
-  opacity: 0.9;
-}
-
-.weather-icon-tolfa {
-  width: 48px;
-  height: 48px;
-  margin: 0.5rem auto;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  filter: drop-shadow(0px 5px 5px rgb(0, 102, 255));
-}
-
-.weather-temp-tolfa {
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin: 0.3rem 0;
-}
-
-.weather-condition {
-  font-size: 0.8rem;
-  opacity: 0.9;
-  text-transform: capitalize;
-}
-
-.weather-error {
-  text-align: center;
-  color: #ff6b6b;
-  padding: 1rem;
-  font-size: 0.9rem;
-}
-
-.weather-box {
-  background-color: #ffffff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 1rem;
-  text-align: center;
-  flex: 1 1 calc(25% - 1rem); /* 4 box per riga su desktop */
-}
-
-@media (max-width: 600px) {
-  .weather-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-  
-  .weather-section {
-    width: 95%;
-    padding: 1rem;
-    max-height: 60vh;
-  }
-
-  .weather-icon-tolfa {
-    width: 40px;
-    height: 40px;
-  }
-
-  .weather-temp-tolfa {
-    font-size: 1.1rem;
-  }
-
-  .weather-box {
-    flex: 1 1 100%; /* 1 box per riga su mobile */
-  }
-}
-/* Mappa */
-#map {
-  height: 60vh;
-  width: 90%;
-  margin: 0 auto;
-  border-radius: 15px;
-  border: 2px solid #fff !important;
-  box-shadow: 0 0 20px rgba(0,0,0,0.6);
-}
-
-/* Stili per i popup della mappa */
-.map-popup {
-  padding: 10px;
-  min-width: 150px;
-}
-
-.map-popup h6 {
-  color: #003366;
-  font-weight: 700;
-  font-size: 1rem;
-  margin-bottom: 5px;
+.hero h1 {
   font-family: 'Montserrat', sans-serif;
-}
-
-.map-popup p {
-  color: #333333;
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 400;
-}
-
-/* Stili per i popup dei programmi */
-#programModal .modal-content {
-  background-color: rgba(0, 0, 0, 0.85);
-  border-radius: 15px;
-  border: 2px solid #fff;
-}
-
-#programModal .modal-header {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-#programModal .modal-header .btn-close {
-  color: #fff;
-  filter: invert(1);
-}
-
-#programModalBody {
-  color: #ffffff;
-  padding: 1rem;
-}
-
-#programModalBody h3 {
-  color: #33AEFF;
   font-weight: 700;
+  font-size: 3.5rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
   margin-bottom: 1.5rem;
-  font-family: 'Montserrat', sans-serif;
-  text-align: center;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  animation: fadeInUp 1.2s;
 }
 
-#programModalBody p {
-  margin-bottom: 1rem;
-  font-family: 'Poppins', sans-serif;
+.special-font {
+  font-family: 'Montserrat', serif;
+  font-weight: 700;
+  background: var(--blue-gradient-light);
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient 5s ease infinite;
+  text-shadow: none;
 }
 
-#programModalBody strong {
-  color: #ff9d00;
-  font-weight: 600;
+/* Animazioni */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* Media query per i popup su mobile */
-@media (max-width: 500px) {
-  #programModalBody h3 {
-    font-size: 1.5rem;
-  }
-  
-  #programModalBody p {
-    font-size: 0.9rem;
-  }
-  
-  .map-popup h6 {
-    font-size: 0.9rem;
-  }
-  
-  .map-popup p {
-    font-size: 0.8rem;
-  }
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-/* Pulsanti */
-.btn-primary {
-  background: linear-gradient(45deg, #0062E6, #33AEFF);
-  border: none;
-  font-weight: 600;
-  transition: transform 0.3s, background 0.3s;
-  width: 40%;  
-  margin: 0 auto; /* Aggiunto per centrare */
+.social-icons {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  animation: fadeIn 2s;
 }
 
-.btn-primary:hover {
-  background: linear-gradient(45deg, #0052c6, #1a9edc);
-  transform: scale(1.05);
-}
-
-/* Contenitori per gruppi di bottoni */
-.button-container {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-  width: 100%;
-}
-
-/* Media query per i bottoni su mobile */
-@media (max-width: 768px) {
-  .btn-primary {
-    width: 40% !important; /* Forza al 40% su mobile */
-  }
-  
-  /* Per i bottoni nelle sezioni programma prove e fotografica */
-  #programma .button-container .btn-primary,
-  #fotografica .button-container .btn-primary {
-    width: 40% !important;
-  }
-}
-
-/* Per mantenere i bottoni del programma (2x2) ben disposti */
-#programma .row .col-md-6 .btn-primary {
-  width: 40%;
-
-}
-
-.bg-white {
-  background-color: #fff;
-  --bs-bg-opacity: 0.3;
-}
-.bg-azzurro {
-  background-color: rgba(0, 191, 255, 0.3) !important;
-}
-
-/* Sezioni comuni */
-section {
-  padding: 2rem 0;
-  scroll-margin-top: 80px;
-  }
-
-/* Ottimizzazione per schermi Full HD (1920px) */
-@media (min-width: 1920px) {
-  .hero h1 {
-    font-size: 4rem;
-  }
-  
-  #map {
-    height: 75vh;
-    box-shadow: 0 0 25px rgba(0,0,0,0.5);
-  }
-}
-
-/* Ottimizzazione per dispositivi mobili (max-width: 500px) */
-@media (max-width: 500px) {
-  body {
-    background: url('images/mobile.jpg') no-repeat center center fixed;
-    background-size: cover;
-    background-position: center;
-  }
-  .navbar {
-    height: 95px; /* Ridotta l'altezza della navbar su mobile */
-  }
-  .hero {
-    padding: 5rem 1rem;
-    margin-top: 50px;
-  }
-  
-  .hero h1 {
-    font-size: 2rem;
-    line-height: 1.3;
-  }
-  
-  #map {
-    aspect-ratio: 9 / 18;
-      }
-  
-  .navbar-brand {
-    font-size: 0.9rem;
-      }
-  
-  .table th, .table td {
-    padding: 0.5rem;
-    font-size: 0.9rem;
-      }
-  
-  .btn {
-    width: 40%;
-  }
-  #programma-pt, #programma-pd {
-    min-height: 50vh;
-    max-height: 70vh;
-    padding: 1.5rem;
-  }
-  .table-responsive {
-    max-height: 90%;
-  }
-  .btn-primary {
-    font-size: 0.8rem; /* Riduce la dimensione del testo nei bottoni su mobile */
- /* Riduce il padding nei bottoni su mobile */
-  }    
-}
-
-/* Stile specifico per bottone di navigazione nella mappa */
-.map-navigate-btn {
-  width: auto !important; /* Sovrascrive la larghezza fissa */
-  min-width: 100px;
-  padding: 6px 12px !important;
-  font-size: 0.9rem !important;
-  display: inline-block;
-  margin: 5px auto !important;
-}
-
-/* Assicura che il bottone di navigazione sia correttamente dimensionato su mobile */
-@media (max-width: 500px) {
-  .map-navigate-btn {
-    padding: 5px 10px !important;
-    font-size: 0.8rem !important;
-  }
-}
-
-@media (min-width: 992px) {
-  .navbar-expand-lg .navbar-collapse {
-      display: contents !important
-;
-      flex-basis: auto;
-  }
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .social-icons a {
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, color 0.3s ease;
   display: inline-block;
 }
 
 .social-icons a:hover {
   transform: scale(1.2);
   color: #f8f9fa !important;
+}
+
+/* Animazioni per gli eventi del programma */
+.event-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.event-item.event-fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.event-location {
+  font-weight: 600;
+  color: #ff9d00;
+}
+
+/* Animazione per i marker della mappa */
+.marker-animation {
+  animation: bounce 0.8s ease;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+  40% {transform: translateY(-15px);}
+  60% {transform: translateY(-7px);}
+}
+
+/* Animazioni per gli elementi meteo */
+.weather-day {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.weather-day.weather-day-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Indicatore di precipitazioni */
+.precipitation-info {
+  background-color: var(--blue-overlay-light);
+  border-radius: 10px;
+  padding: 3px 8px;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  display: inline-block;
+}
+
+/* Stile per messaggi di errore */
+.error-message {
+  background-color: rgba(255, 50, 50, 0.1);
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  border-left: 4px solid #ff3232;
+}
+
+.error-message h3 {
+  color: #ff3232 !important;
+}
+
+/* Contenitore per errori generici */
+.error-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  z-index: 1000;
+  max-width: 80%;
+}
+
+/* Effetto per gli elementi con animazione durante lo scroll */
+.scroll-fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.scroll-fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Pulsanti con sfumature e effetti avanzati */
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary-blue-light), var(--primary-blue-dark));
+  border: none;
+  font-weight: 600;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  width: 100% !important;
+  max-width: 180px !important;
+  padding: 0.6rem 1rem !important;
+  font-size: 0.85rem !important;
+  border-radius: 50px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 0 4px 15px rgba(0, 120, 215, 0.3), 0 2px 5px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  letter-spacing: 0.5px;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.7s ease;
+  z-index: -1;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 7px 20px rgba(0, 120, 215, 0.5), 0 3px 8px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #3db1ff, var(--primary-blue));
+  color: white;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+.btn-primary:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 120, 215, 0.4);
+}
+
+/* Effetto shine sui bottoni */
+@keyframes shine {
+  0% {
+    left: -100%;
+    opacity: 0.7;
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+.button-container .btn-primary:nth-child(1):hover::before { animation: shine 1.2s ease-out; }
+.button-container .btn-primary:nth-child(2):hover::before { animation: shine 1.2s ease-out 0.1s; }
+.button-container .btn-primary:nth-child(3):hover::before { animation: shine 1.2s ease-out 0.2s; }
+.button-container .btn-primary:nth-child(4):hover::before { animation: shine 1.2s ease-out 0.3s; }
+
+/* Pulsanti con sfumature diverse per ogni gruppo */
+.button-container .btn-primary:nth-child(1) {
+  background: var(--blue-gradient);
+  box-shadow: 0 4px 15px rgba(30, 95, 148, 0.3), 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.button-container .btn-primary:nth-child(1):hover {
+  background: linear-gradient(135deg, #3db1ff, var(--primary-blue));
+  box-shadow: 0 7px 20px rgba(45, 143, 213, 0.5), 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+.button-container .btn-primary:nth-child(2) {
+  background: var(--gold-gradient);
+  box-shadow: 0 4px 15px rgba(230, 181, 76, 0.3), 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.button-container .btn-primary:nth-child(2):hover {
+  background: var(--gold-gradient-dark);
+  box-shadow: 0 7px 20px rgba(230, 181, 76, 0.5), 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+#programma .button-container:nth-of-type(2) .btn-primary:nth-child(1) {
+  background: var(--gold-gradient);
+  box-shadow: 0 4px 15px rgba(230, 181, 76, 0.3), 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#programma .button-container:nth-of-type(2) .btn-primary:nth-child(1):hover {
+  background: var(--gold-gradient-dark);
+  box-shadow: 0 7px 20px rgba(230, 181, 76, 0.5), 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+#programma .button-container:nth-of-type(2) .btn-primary:nth-child(2) {
+  background: var(--blue-gradient);
+  box-shadow: 0 4px 15px rgba(45, 143, 213, 0.2), 0 4px 15px rgba(45, 143, 213, 0.2), 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#programma .button-container:nth-of-type(2) .btn-primary:nth-child(2):hover {
+  background: linear-gradient(135deg, #5ba8f5, #8c6aef);
+  box-shadow: 0 7px 20px rgba(45, 143, 213, 0.3), 0 7px 20px rgba(45, 143, 213, 0.3), 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Effetto speciale per map-navigate-btn */
+.map-navigate-btn {
+  width: auto !important;
+  min-width: 100px;
+  padding: 6px 12px !important;
+  font-size: 0.9rem !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin: 5px auto !important;
+  background: linear-gradient(135deg, #2196F3, #0D47A1);
+  border-radius: 30px;
+  box-shadow: 0 3px 10px rgba(0, 60, 112, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.map-navigate-btn:hover {
+  background: linear-gradient(135deg, #42A5F5, #1976D2);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(33, 150, 243, 0.5);
+}
+
+.map-navigate-btn img {
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+}
+
+/* Contenitori per gruppi di bottoni con effetti 3D */
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem !important;
+  flex-wrap: wrap;
+  width: 100%;
+  perspective: 1000px;
+}
+
+/* Sezioni generiche */
+section {
+  padding: 4rem 0;
+  scroll-margin-top: 100px;
+  position: relative;
+  z-index: 1;
+}
+
+section::before {
+  content: none; /* Rimosso il background specifico per ogni sezione */
+}
+
+/* Aggiungo uno strato azzurro semi-trasparente sopra tutte le sezioni */
+main {
+  position: relative;
+  z-index: 1;
+}
+
+main::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(13, 59, 100, 0.35), rgba(211, 154, 39, 0.3));
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #fff;
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: var(--blue-gradient-light);
+  margin: 0.8rem auto 0;
+}
+
+/* Background container */
+.background-container {
+  position: fixed;
+  margin-top: 56px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  overflow: hidden;
 }
 
 .background-fade {
@@ -464,18 +568,991 @@ section {
   background-size: cover;
   background-position: center;
   opacity: 0;
-  transition: opacity 1.5s ease-in-out;
+  filter: blur(3px);
+  will-change: opacity, transform;
+  transition: opacity 2.5s cubic-bezier(0.33, 1, 0.68, 1), transform 3s cubic-bezier(0.33, 1, 0.68, 1);
+  transform: scale(1.05);
 }
 
 .background-fade.active {
-  opacity: 1;
+  opacity: 0.85;
+  transform: scale(1);
 }
-.background-container {
-  position: fixed;
-  margin-top: 56px;
+
+/* Design perfezionato della sezione meteo */
+.weather-section {
+  position: relative;
+  padding: 2.5rem 0 1.5rem;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.weather-section::before {
+  content: '';
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -2;
+  background: linear-gradient(135deg, var(--blue-overlay-light), rgba(38, 18, 92, 0.4));
+  z-index: -1;
+}
+
+.weather-section h2 {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.weather-section h2::before {
+  content: '☀️';
+  position: absolute;
+  left: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+}
+
+.weather-section h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: var(--blue-gradient-light);
+  margin: 0.8rem auto 0;
+  box-shadow: var(--blue-glow);
+}
+
+.weather-grid {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 0.5rem 0;
+  margin: 0 -10px;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  position: relative;
+  gap: 12px;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 100%;
+  padding-bottom: 10px;
+}
+
+.weather-grid::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+.weather-day {
+  flex: 0 0 auto;
+  width: 120px;
+  padding: 15px 10px;
+  border-radius: 16px;
+  scroll-snap-align: start;
+  background: rgba(0, 29, 54, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(30, 95, 148, 0.2);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.weather-day::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--primary-blue-light), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.weather-day:first-child {
+  margin-left: 10px;
+}
+
+.weather-day:last-child {
+  margin-right: 10px;
+}
+
+.weather-day:hover, .weather-day:active {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 8px 25px rgba(45, 143, 213, 0.4);
+  border-color: rgba(30, 95, 148, 0.4);
+}
+
+.weather-day:hover::after, .weather-day:active::after {
+  opacity: 1;
+}
+
+.weather-date {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.weather-day-name {
+  font-weight: 700;
+  color: var(--primary-blue-light);
+  text-shadow: 0 0 5px rgba(45, 143, 213, 0.5);
+}
+
+.weather-icon-wrapper {
+  position: relative;
+  height: 50px;
+  margin: 8px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.weather-icon-tolfa {
+  width: 50px;
+  height: 50px;
+  display: block;
+  margin: 0 auto;
+  filter: drop-shadow(0 4px 6px rgba(45, 143, 213, 0.6));
+  transition: transform 0.3s ease;
+}
+
+.weather-day:hover .weather-icon-tolfa {
+  transform: scale(1.1);
+}
+
+.weather-temp-tolfa {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0;
+}
+
+.temp-max {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.temp-separator {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.8rem;
+}
+
+.temp-min {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.weather-condition {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  text-transform: capitalize;
+  height: 2.4em;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+.precipitation-info {
+  margin: 5px auto 0;
+  font-size: 0.75rem;
+  background: var(--blue-overlay-light);
+  border-radius: 12px;
+  padding: 3px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: fit-content;
+  transition: background 0.3s ease;
+}
+
+.weather-day:hover .precipitation-info {
+  background: rgba(30, 95, 148, 0.3);
+}
+
+.precipitation-info i {
+  font-size: 0.7rem;
+  color: var(--primary-blue-light);
+}
+
+.weather-scroll-indicator {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+.scroll-dots {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 5px;
+}
+
+.scroll-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+.scroll-dot.active {
+  background: var(--primary-blue-light);
+  box-shadow: 0 0 5px rgba(30, 95, 148, 0.7);
+}
+
+.weather-day.today {
+  background: linear-gradient(135deg, rgba(30, 95, 148, 0.2), rgba(13, 59, 100, 0.4));
+  border-color: rgba(30, 95, 148, 0.5);
+  box-shadow: 0 4px 20px rgba(30, 95, 148, 0.3);
+}
+
+.today-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: var(--primary-blue-light);
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  box-shadow: 0 0 8px rgba(30, 95, 148, 0.8);
+  animation: pulseBadge 2s infinite ease-in-out;
+}
+
+@keyframes pulseBadge {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+/* Stile per errori meteo */
+.weather-error {
+  background: rgba(255, 50, 50, 0.1);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 300px;
+  border: 1px solid rgba(255, 50, 50, 0.3);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.weather-error p {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+  color: #ff5050;
+}
+
+.weather-error small {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+}
+
+.weather-error button {
+  margin-top: 10px !important;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  border-radius: 20px;
+  padding: 5px 15px;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.weather-error button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: scale(1.05);
+}
+
+@media (min-width: 576px) {
+  .weather-day {
+    width: 140px;
+    padding: 18px 12px;
+  }
+  
+  .weather-date {
+    font-size: 0.9rem;
+  }
+  
+  .weather-icon-wrapper {
+    height: 60px;
+  }
+  
+  .weather-icon-tolfa {
+    width: 55px;
+    height: 55px;
+  }
+  
+  .temp-max {
+    font-size: 1.3rem;
+  }
+  
+  .temp-min {
+    font-size: 1.05rem;
+  }
+  
+  .weather-condition {
+    font-size: 0.85rem;
+  }
+
+  .precipitation-info {
+    font-size: 0.8rem;
+    padding: 4px 10px;
+  }
+}
+
+@media (min-width: 992px) {
+  .weather-grid {
+    justify-content: center;
+    margin: 0;
+    gap: 20px;
+    overflow-x: visible;
+    padding: 10px 0;
+  }
+  
+  .weather-day {
+    margin: 0 !important;
+    width: 160px;
+    padding: 20px 15px;
+  }
+  
+  .weather-day:first-child,
+  .weather-day:last-child {
+    margin: 0;
+  }
+
+  .weather-day:nth-child(1) { animation: fadeInUp 0.5s forwards 0.1s; }
+  .weather-day:nth-child(2) { animation: fadeInUp 0.5s forwards 0.2s; }
+  .weather-day:nth-child(3) { animation: fadeInUp 0.5s forwards 0.3s; }
+  .weather-day:nth-child(4) { animation: fadeInUp 0.5s forwards 0.4s; }
+  
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .weather-scroll-indicator {
+    display: none;
+  }
+}
+
+/* Stili per la sezione della temperatura attuale */
+
+#temperatura-attuale {
+  position: relative;
+  z-index: 2;
+}
+
+#temperatura-attuale::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 29, 54, 0.4);
+  z-index: -1;
+}
+
+#temperatura-attuale .container {
+  position: relative;
+  z-index: 2;
+}
+
+#temperatura-attuale h3 {
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.current-weather {
+  padding: 1.2rem;
+  border-radius: 15px;
+  background-color: rgba(30, 95, 148, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: inline-block;
+  min-width: 240px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  border: 1px solid rgba(30, 95, 148, 0.2);
+  margin: 0 auto;
+}
+
+#current-temperature {
+  font-size: 2.8rem;
+  font-weight: 700;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  margin-left: 10px;
+}
+
+#current-weather-icon {
+  width: 75px;
+  height: 75px;
+  filter: drop-shadow(0 3px 5px rgba(0,0,0,0.3));
+}
+
+#current-weather-description {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  text-transform: capitalize;
+}
+
+@media (max-width: 576px) {
+  #current-temperature {
+    font-size: 2.2rem;
+  }
+  
+  #current-weather-description {
+    font-size: 1.1rem;
+  }
+  
+  #current-weather-icon {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .current-weather {
+    padding: 0.8rem;
+    min-width: 200px;
+  }
+}
+
+/* Mappa */
+#map {
+  height: 60vh;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 15px;
+  border: 2px solid #fff;
+  box-shadow: 0 0 20px rgba(0,0,0,0.6);
+  transition: all 0.3s;
+}
+
+#map:hover {
+  box-shadow: 0 0 30px rgba(30, 95, 148, 0.5);
+}
+
+.map-legend {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 0.8rem;
+  border-radius: 10px;
+  margin-top: 1rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+/* Stili per i popup della mappa */
+.map-popup {
+  padding: 15px;
+  min-width: 200px;
+}
+
+.map-popup h6 {
+  color: #003366;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.map-popup p {
+  color: #333333;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 0.95rem;
+}
+
+.activities-box {
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 6px;
+  border-left: 3px solid #0062E6;
+}
+
+/* Stili per i popup dei programmi */
+#programModal .modal-content {
+  background-color: var(--dark-bg);
+  border-radius: 15px;
+  border: 2px solid var(--primary-blue);
+  box-shadow: 0 0 30px rgba(30, 95, 148, 0.3);
+}
+
+#programModal .modal-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 1.5rem;
+}
+
+#programModal .modal-header .btn-close {
+  color: #fff;
+  filter: invert(1);
+}
+
+#programModalBody {
+  color: #ffffff;
+  padding: 1rem !important;
+  max-height: 65vh !important;
+  overflow-y: auto;
+}
+
+#programModalBody::-webkit-scrollbar {
+  width: 8px;
+}
+
+#programModalBody::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+#programModalBody::-webkit-scrollbar-thumb {
+  background: rgba(30, 95, 148, 0.5);
+  border-radius: 10px;
+}
+
+#programModalBody h3 {
+  color: var(--primary-blue-light);
+  font-weight: 700;
+  margin-bottom: 1rem !important;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  font-size: 1.4rem !important;
+}
+
+#programModalBody p {
+  margin-bottom: 0.8rem !important;
+  font-family: 'Poppins', sans-serif;
+  padding: 0.7rem !important;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  transition: background-color 0.3s;
+  font-size: 0.85rem !important;
+}
+
+#programModalBody p:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+#programModalBody strong {
+  color: var(--primary-blue-light);
+  font-weight: 600;
+}
+
+#programModal .modal-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#programModal .btn-secondary {
+  background-color: transparent;
+  border: 1px solid var(--primary-blue-light);
+  color: var(--primary-blue-light);
+  transition: all 0.3s;
+}
+
+#programModal .btn-secondary:hover {
+  background-color: var(--primary-blue-light);
+  color: #000;
+}
+
+/* Pulsanti */
+.btn-primary {
+  background: var(--blue-gradient);
+  border: none;
+  font-weight: 600;
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+  width: 100% !important;
+  max-width: 180px !important;
+  padding: 0.6rem 1rem !important;
+  font-size: 0.85rem !important;
+  border-radius: 50px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: var(--blue-gradient-light);
+  transition: width 0.3s ease-in-out;
+  z-index: -1;
+  border-radius: 50px;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: var(--blue-glow);
+}
+
+.btn-primary:hover::before {
+  width: 100%;
+}
+
+/* Contenitori per gruppi di bottoni */
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem !important;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+/* Map navigate button */
+.map-navigate-btn {
+  width: auto !important;
+  min-width: 100px;
+  padding: 6px 12px !important;
+  font-size: 0.9rem !important;
+  display: inline-block;
+  margin: 5px auto !important;
+  background: var(--blue-gradient);
+  border-radius: 30px;
+}
+
+.map-navigate-btn:hover {
+  background: var(--blue-gradient-light);
+  transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+  background-color: var(--dark-bg) !important;
+  padding: 1.5rem 0 !important;
+  font-size: 0.85rem !important;
+  position: relative;
+  z-index: 10;
+}
+
+footer .social-icons a {
+  font-size: 1.3rem !important;
+  margin: 0 8px !important;
+}
+
+/* Media queries per responsive design */
+/* Per tablet */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+  
+  .btn-primary {
+    width: 100% !important;
+    max-width: 250px;
+  }
+  
+  #programma .row .col-md-6 .btn-primary {
+    width: 100% !important;
+    max-width: 250px;
+  }
+  
+  .weather-day {
+    width: 45%;
+  }
+}
+
+/* Per smartphone */
+@media (max-width: 576px) {
+  .navbar {
+    height: 70px !important;
+  }
+  
+  .navbar-brand {
+    top: 10px;
+    left: 10px;
+  }
+  
+  .navbar-brand img {
+    height: 40px !important;
+    width: auto !important;
+  }
+  
+  .navbar-toggler {
+    top: 15%;
+    right: 15px;
+    padding: 5px;
+  }
+  
+  .hero {
+    padding: 5rem 1rem 2.5rem !important;
+  }
+  
+  .hero h1 {
+    font-size: 1.8rem !important;
+    line-height: 1.3;
+    margin-top: 1rem;
+  }
+  
+  .special-font {
+    font-size: 1.6rem;
+    line-height: 1.4;
+  }
+  
+  section {
+    padding: 2.5rem 0 !important;
+  }
+  
+  h2 {
+    font-size: 1.6rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  h2::after {
+    width: 60px !important;
+  }
+  
+  .weather-day {
+    width: 45% !important;
+    padding: 1rem !important;
+    min-width: 130px !important;
+  }
+  
+  .weather-date {
+    font-size: 0.9rem !important;
+  }
+  
+  .weather-icon-tolfa {
+    width: 40px !important;
+    height: 40px !important;
+    margin: 0.5rem auto !important;
+  }
+  
+  .weather-temp-tolfa {
+    font-size: 1.2rem !important;
+  }
+  
+  .weather-condition {
+    font-size: 0.85rem !important;
+  }
+  
+  .precipitation-info {
+    font-size: 0.75rem !important;
+    padding: 2px 6px !important;
+  }
+  
+  #map {
+    height: 50vh !important;
+    border-radius: 10px !important;
+    border-width: 1px !important;
+  }
+  
+  .map-legend {
+    padding: 0.5rem !important;
+    font-size: 0.8rem !important;
+  }
+  
+  .legend-item img {
+    width: 16px !important;
+    height: 16px !important;
+  }
+  
+  .button-container {
+    gap: 0.8rem !important;
+  }
+  
+  .btn-primary {
+    width: 100% !important;
+    max-width: 180px !important;
+    padding: 0.6rem 1rem !important;
+    font-size: 0.85rem !important;
+  }
+  
+  #programModalBody {
+    padding: 1rem !important;
+    max-height: 65vh !important;
+  }
+  
+  #programModalBody h3 {
+    font-size: 1.4rem !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  #programModalBody p {
+    padding: 0.7rem !important;
+    margin-bottom: 0.8rem !important;
+    font-size: 0.85rem !important;
+  }
+  
+  footer {
+    padding: 1.5rem 0 !important;
+    font-size: 0.85rem !important;
+  }
+  
+  .social-icons a {
+    font-size: 1.3rem !important;
+    margin: 0 8px !important;
+  }
+}
+
+/* Fix per i bottoni su piccoli schermi */
+@media (max-width: 360px) {
+  .btn-primary {
+    max-width: 140px !important;
+    padding: 0.5rem 0.8rem !important;
+    font-size: 0.8rem !important;
+  }
+  
+  .weather-day {
+    width: 100% !important;
+    max-width: 200px !important;
+  }
+}
+
+/* Fix per dispositivi con display molto piccoli */
+@media (max-width: 320px) {
+  .hero h1 {
+    font-size: 1.6rem !important;
+  }
+  
+  .btn-primary {
+    max-width: 120px !important;
+  }
+  
+  .navbar-brand img {
+    height: 35px !important;
+  }
+  
+  .weather-day {
+    padding: 0.8rem !important;
+  }
+  
+  h2 {
+    font-size: 1.4rem !important;
+  }
+}
+
+/* Adattamenti specifici per dispositivi mobili in orientamento orizzontale */
+@media (max-height: 480px) and (orientation: landscape) {
+  .weather-section {
+    padding: 1.5rem 0 !important;
+  }
+  
+  .weather-section h2 {
+    margin-bottom: 1rem !important;
+  }
+  
+  /* Riduce il padding nella vista meteo su mobile orizzontale */
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  /* Riduci l'altezza della mappa in landscape per dare più spazio al contenuto */
+  #map {
+    height: 45vh !important;
+  }
+  
+  /* Migliora i popup della mappa su dispositivi con schermi piccoli orizzontali */
+  .map-popup {
+    max-width: 200px !important;
+    padding: 8px !important;
+  }
+  
+  .map-popup h6 {
+    font-size: 0.85rem !important;
+    margin-bottom: 4px !important;
+  }
+  
+  .map-popup p, 
+  .map-popup .activities-box {
+    font-size: 0.75rem !important;
+    margin: 5px 0 !important;
+    padding: 5px !important;
+  }
+}
+
+/* Miglioramenti per dispositivi mobili con touch screen */
+@media (pointer: coarse) {
+  /* Rendi i pulsanti più grandi per essere toccati facilmente */
+  .btn-primary,
+  .map-navigate-btn,
+  .btn-back {
+    min-height: 44px;
+  }
+  
+  /* Aggiungi spaziatura aggiuntiva tra gli elementi nella navbar */
+  .nav-item {
+    margin: 0.7rem 0;
+  }
+  
+  /* Migliora la gestione dei tap sui link */
+  a, button {
+    touch-action: manipulation;
+  }
+}
+
+/* Fix per telefoni di piccole dimensioni (iPhone 5/SE e simili) */
+@media (max-width: 350px) {
+  h2 {
+    font-size: 1.4rem !important;
+  }
+  
+  .weather-day {
+    padding: 0.7rem !important;
+  }
+  
+  .btn-primary {
+    font-size: 0.75rem !important;
+    padding: 0.5rem 0.8rem !important;
+  }
+  
+  /* Riduce spaziatura verticale */
+  section {
+    padding: 2rem 0 !important;
+  }
+  
+  .button-container {
+    gap: 0.5rem !important;
+  }
 }

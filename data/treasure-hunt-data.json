@@ -1,0 +1,123 @@
+{
+  "chapters": [
+    {
+      "id": 1,
+      "title": "Il Mistero della Rocca",
+      "description": "Il primo passo nella caccia al tesoro ti porterà alla scoperta dell'antica Rocca di Tolfa.",
+      "locked": false,
+      "qrCode": "TOLFA-CH1",
+      "unlockCode": "",
+      "questions": [
+        {
+          "text": "Qual è il nome dell'antica famiglia che costruì la Rocca di Tolfa?",
+          "answer": "frangipane",
+          "storyPart": "La storia di Tolfa inizia molto tempo fa, quando la famiglia Frangipane costruì l'imponente Rocca che ancora oggi domina il paese."
+        },
+        {
+          "text": "In quale secolo fu costruita la Rocca di Tolfa?",
+          "answer": "xiii",
+          "storyPart": "Nel XIII secolo, la Rocca divenne un importante punto strategico per il controllo del territorio circostante e delle preziose risorse naturali."
+        },
+        {
+          "text": "Quale materiale prezioso fu scoperto nelle colline di Tolfa nel 1462?",
+          "answer": "allume",
+          "storyPart": "Nel 1462, Giovanni da Castro scoprì l'allume nelle colline di Tolfa, un minerale prezioso che trasformò l'economia del territorio e attirò l'interesse del Papato."
+        }
+      ],
+      "mapLocation": {
+        "lat": 42.15247152653981,
+        "lng": 11.943477067877886,
+        "title": "La Rocca dei Frangipane",
+        "description": "L'antica fortezza che domina Tolfa",
+        "hint": "Cerca tra le antiche mura il prossimo indizio!"
+      },
+      "nextLocation": {
+        "lat": 42.14987940358026,
+        "lng": 11.930005844754685,
+        "title": "Polo Culturale",
+        "description": "Il centro culturale di Tolfa",
+        "hint": "Qui troverai il QR code per il prossimo capitolo"
+      },
+      "generatedUnlockCode": "ROCCA2025"
+    },
+    {
+      "id": 2,
+      "title": "Il Segreto delle Miniere",
+      "description": "Il secondo capitolo ti porterà alla scoperta delle antiche miniere di allume di Tolfa.",
+      "locked": true,
+      "qrCode": "TOLFA-CH2",
+      "unlockCode": "ROCCA2025",
+      "questions": [
+        {
+          "text": "Chi scoprì i giacimenti di allume nelle colline di Tolfa?",
+          "answer": "giovanni da castro",
+          "storyPart": "Giovanni da Castro, esperto mineralogista, riconobbe nelle colline di Tolfa le stesse caratteristiche delle montagne turche dove aveva visto estrarre l'allume."
+        },
+        {
+          "text": "Quale istituzione controllava le miniere di allume di Tolfa?",
+          "answer": "stato pontificio",
+          "storyPart": "Lo Stato Pontificio prese il controllo delle miniere, creando un vero e proprio monopolio che generò enormi ricchezze per il Papato."
+        },
+        {
+          "text": "Fino a quale secolo furono attive le miniere di allume di Tolfa?",
+          "answer": "xix",
+          "storyPart": "L'estrazione dell'allume continuò fino al XIX secolo, quando nuovi processi chimici per la produzione sintetica resero la miniera non più redditizia."
+        }
+      ],
+      "mapLocation": {
+        "lat": 42.14987940358026,
+        "lng": 11.930005844754685,
+        "title": "Polo Culturale",
+        "description": "Sede delle testimonianze storiche sulle miniere",
+        "hint": "Esplora gli antichi documenti per trovare il prossimo indizio!"
+      },
+      "nextLocation": {
+        "lat": 42.15025,
+        "lng": 11.93487,
+        "title": "Teatro Claudio",
+        "description": "Il teatro storico di Tolfa",
+        "hint": "Il palcoscenico nasconde il prossimo segreto!"
+      },
+      "generatedUnlockCode": "ALLUME1462"
+    },
+    {
+      "id": 3,
+      "title": "Le Tradizioni di Tolfa",
+      "description": "Il capitolo finale ti porterà alla scoperta delle tradizioni più autentiche di Tolfa.",
+      "locked": true,
+      "qrCode": "TOLFA-CH3",
+      "unlockCode": "ALLUME1462",
+      "questions": [
+        {
+          "text": "Come si chiama la caratteristica sella utilizzata dai butteri tolfetani?",
+          "answer": "bardella",
+          "storyPart": "I butteri, i cowboy della Maremma Laziale, utilizzano la 'bardella', una speciale sella che permette loro di controllare il bestiame nelle campagne tolfetane."
+        },
+        {
+          "text": "Qual è la festa patronale più importante di Tolfa?",
+          "answer": "sant'egidio",
+          "storyPart": "La festa di Sant'Egidio è la celebrazione patronale più sentita dai tolfetani, con processioni, eventi e la tradizionale corsa dei cavalli."
+        },
+        {
+          "text": "Quale prodotto artigianale in cuoio è una specialità di Tolfa?",
+          "answer": "catana",
+          "storyPart": "La 'catana' è la borsa in cuoio tipica di Tolfa, realizzata secondo tecniche artigianali tramandate da generazioni e diventata un simbolo del territorio."
+        }
+      ],
+      "mapLocation": {
+        "lat": 42.15025,
+        "lng": 11.93487,
+        "title": "Teatro Claudio",
+        "description": "Centro delle tradizioni culturali tolfetane",
+        "hint": "Le tradizioni popolari ti condurranno al tesoro finale!"
+      },
+      "finalLocation": {
+        "lat": 42.14849761781823,
+        "lng": 11.937441288508827,
+        "title": "Giardino della Villa Comunale",
+        "description": "Il tesoro è qui!",
+        "hint": "Hai completato la caccia al tesoro! Recati al Giardino della Villa Comunale per ricevere il tuo premio!"
+      }
+    }
+  ]
+}
